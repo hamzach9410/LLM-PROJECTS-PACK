@@ -1,3 +1,6 @@
+# Developed by: Ali Hamza (https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+# Email: ihamzaali06@gmail.com
+
 import streamlit as st
 from openai import OpenAI
 from agno.agent import Agent as AgnoAgent
