@@ -1,16 +1,23 @@
 # 🌍 AQI Analysis Agent
 
-### 🎓 FREE Step-by-Step Tutorial 
-**👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-an-aqi-analysis-agent) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
+Developed by **Ali Hamza** | AI/ML/DL Engineer
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Hamza-blue?logo=linkedin)](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+[![Email](https://img.shields.io/badge/Email-ihamzaali06%40gmail.com-red?logo=gmail)](mailto:ihamzaali06@gmail.com)
+
+---
+
+### 🎓 FREE Step-by-Step Tutorial
+
+**👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-an-aqi-analysis-agent) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
 
 The AQI Analysis Agent is a powerful air quality monitoring and health recommendation tool powered by Firecrawl and Agno's AI Agent framework. This app helps users make informed decisions about outdoor activities by analyzing real-time air quality data and providing personalized health recommendations.
 
 ## Features
 
 - **Multi-Agent System**
-    - **AQI Analyzer**: Fetches and processes real-time air quality data
-    - **Health Recommendation Agent**: Generates personalized health advice
+  - **AQI Analyzer**: Fetches and processes real-time air quality data
+  - **Health Recommendation Agent**: Generates personalized health advice
 
 - **Air Quality Metrics**:
   - Overall Air Quality Index (AQI)
@@ -39,30 +46,33 @@ The AQI Analysis Agent is a powerful air quality monitoring and health recommend
 Follow these steps to set up and run the application:
 
 1. **Clone the Repository**:
+
    ```bash
-   git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-   cd ai_agent_tutorials/ai_aqi_analysis_agent
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd starter_ai_agents/ai_aqi_analysis_agent
    ```
 
 2. **Install the dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
+
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 3. **Set up your API keys**:
-    - Get an OpenAI API key from: https://platform.openai.com/api-keys
-    - Get a Firecrawl API key from: [Firecrawl website](https://www.firecrawl.dev/app/api-keys)
+   - Get an OpenAI API key from: https://platform.openai.com/api-keys
+   - Get a Firecrawl API key from: [Firecrawl website](https://www.firecrawl.dev/app/api-keys)
 
 4. **Run the Gradio app**:
-    ```bash
-    python ai_aqi_analysis_agent.py
-    ```
+
+   ```bash
+   python ai_aqi_analysis_agent.py
+   ```
 
 5. **Access the Web Interface**:
-    - The terminal will display two URLs:
-      - Local URL: `http://127.0.0.1:7860` (for local access)
-      - Public URL: `https://xxx-xxx-xxx.gradio.live` (for temporary public access)
-    - Click on either URL to open the web interface in your browser
+   - The terminal will display two URLs:
+     - Local URL: `http://127.0.0.1:7860` (for local access)
+     - Public URL: `https://xxx-xxx-xxx.gradio.live` (for temporary public access)
+   - Click on either URL to open the web interface in your browser
 
 ## Usage
 

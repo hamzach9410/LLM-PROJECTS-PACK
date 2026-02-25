@@ -1,6 +1,14 @@
 # 🔍 AI Domain Deep Research Agent
 
-### 🎓 FREE Step-by-Step Tutorial 
+Developed by **Ali Hamza** | AI/ML/DL Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Hamza-blue?logo=linkedin)](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+[![Email](https://img.shields.io/badge/Email-ihamzaali06%40gmail.com-red?logo=gmail)](mailto:ihamzaali06@gmail.com)
+
+---
+
+### 🎓 FREE Step-by-Step Tutorial
+
 **👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-an-ai-domain-deep-research-agent) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
 
 An advanced AI research agent built using the Agno Agent framework, Together AI's Qwen model, and Composio tools. This agent helps users conduct comprehensive research on any topic by generating research questions, finding answers through multiple search engines, and compiling professional reports with Google Docs integration.
@@ -8,22 +16,21 @@ An advanced AI research agent built using the Agno Agent framework, Together AI'
 ## Features
 
 - 🧠 **Intelligent Question Generation**:
-
   - Automatically generates 5 specific research questions about your topic
   - Tailors questions to your specified domain
   - Focuses on creating yes/no questions for clear research outcomes
-- 🔎 **Multi-Source Research**:
 
+- 🔎 **Multi-Source Research**:
   - Uses Tavily Search for comprehensive web results
   - Leverages Perplexity AI for deeper analysis
   - Combines multiple sources for thorough research
-- 📊 **Professional Report Generation**:
 
+- 📊 **Professional Report Generation**:
   - Compiles research findings into a McKinsey-style report
   - Structures content with executive summary, analysis, and conclusion
   - Creates a Google Doc with the complete report
-- 🖥️ **User-Friendly Interface**:
 
+- 🖥️ **User-Friendly Interface**:
   - Clean Streamlit UI with intuitive workflow
   - Real-time progress tracking
   - Expandable sections to view detailed results
@@ -34,7 +41,7 @@ An advanced AI research agent built using the Agno Agent framework, Together AI'
 
    ```bash
    # Clone the repository
-   git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
    cd advanced_ai_agents/single_agent_apps/ai_domain_deep_research_agent
 
    # Install dependencies
@@ -43,11 +50,12 @@ An advanced AI research agent built using the Agno Agent framework, Together AI'
    composio add googledocs
    composio add perplexityai
    ```
-2. **Configure API Keys**
 
+2. **Configure API Keys**
    - Get Together AI API key from [Together AI](https://together.ai)
    - Get Composio API key from [Composio](https://composio.ai)
    - Add these to a `.env` file or enter them in the app sidebar
+
 3. **Run the Application**
 
    ```bash

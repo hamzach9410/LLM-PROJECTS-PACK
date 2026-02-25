@@ -1,6 +1,14 @@
-# 🏚️ 🍌 AI Home Renovation Planner Agent 
+# 🏚️ AI Home Renovation Planner Agent
 
-### 🎓 FREE Step-by-Step Tutorial 
+Developed by **Ali Hamza** | AI/ML/DL Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Hamza-blue?logo=linkedin)](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+[![Email](https://img.shields.io/badge/Email-ihamzaali06%40gmail.com-red?logo=gmail)](mailto:ihamzaali06@gmail.com)
+
+---
+
+### 🎓 FREE Step-by-Step Tutorial
+
 **👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-an-ai-home-renovation-planner-agent-using-nano-banana) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
 
 A multi-agent system built with Google ADK that analyzes photos of your space, creates personalized renovation plans, and generates photorealistic renderings using Gemini 3 Flash and Gemini 3 Pro's multimodal capabilities.
@@ -36,26 +44,32 @@ The system uses a **Coordinator/Dispatcher pattern** with three specialized agen
 ## Quick Start
 
 1. **Clone the repository**
+
    ```bash
-   git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-   cd awesome-llm-apps/advanced_ai_agents/multi_agent_apps/ai_home_renovation_agent
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd LLM-PROJECTS-PACK/advanced_ai_agents/multi_agent_apps/ai_home_renovation_agent
    ```
 
 2. **Install dependencies**
+
    ```bash
    pip install -r requirements.txt
    ```
 
 3. **Set up your API key**
+
    ```bash
    export GOOGLE_API_KEY="your_gemini_api_key"
    ```
+
    Or create a `.env` file:
+
    ```
    GOOGLE_API_KEY=your_gemini_api_key
    ```
 
-4. **Launch ADK Web** 
+4. **Launch ADK Web**
+
    ```bash
    cd multi_agent_apps
    adk web
@@ -66,37 +80,46 @@ The system uses a **Coordinator/Dispatcher pattern** with three specialized agen
 ## Usage Examples
 
 ### Scenario 1: Current Room + Budget
+
 ```
 [Upload photo of your kitchen]
 "What can I improve here with a $5k budget?"
 ```
+
 → Agent analyzes your space, suggests budget-friendly improvements, generates rendering
 
 ### Scenario 2: Room + Inspiration
+
 ```
 [Upload photo 1: your kitchen]
 [Upload photo 2: Pinterest inspiration]
 "Transform my kitchen to look like this. What's the cost?"
 ```
+
 → Agent extracts style from inspiration, applies to your room, provides budget + rendering
 
 ### Scenario 3: Text Only
+
 ```
-"Renovate my 10x12 kitchen with oak cabinets and laminate counters. 
+"Renovate my 10x12 kitchen with oak cabinets and laminate counters.
 Want modern farmhouse style with white shaker cabinets. Budget: $30k"
 ```
+
 → Agent creates design plan and generates rendering from description
 
 ### Scenario 4: Iterative Refinement
+
 ```
 [After initial rendering]
 "Make the cabinets cream instead of white"
 "Add pendant lights over the island"
 "Change flooring to lighter oak"
 ```
+
 → Agent refines the rendering with your feedback
 
 ## Sample Prompts
+
 - "I want to renovate my small galley kitchen. It's 8x12 feet, has oak cabinets from the 90s. I love modern farmhouse style. Budget: $25k"
 - "My master bathroom is tiny (5x8) with a cramped tub. I want a spa-like retreat with walk-in shower. Budget: $15k"
 - "Transform my boring bedroom into a cozy retreat. Thinking accent wall, new flooring. Budget: $12k"
@@ -124,8 +147,8 @@ Coordinator (Root Agent)
 ```
 
 **Why this pattern?**
+
 - Efficient: Only runs workflows that are needed
 - Modular: Each agent has clear responsibilities
 - Scalable: Easy to add new features
 - Production-ready: Real-world agentic system pattern
-

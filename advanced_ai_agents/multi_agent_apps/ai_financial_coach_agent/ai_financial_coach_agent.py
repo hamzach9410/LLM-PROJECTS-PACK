@@ -960,8 +960,8 @@ def main():
         ### Need Help?
         
         For support or questions:
-        - Check the [documentation](https://github.com/Shubhamsaboo/awesome-llm-apps)
-        - Report issues on [GitHub](https://github.com/Shubhamsaboo/awesome-llm-apps/issues)
+        - Check the [documentation](https://github.com/hamzach9410/LLM-PROJECTS-PACK)
+        - Report issues on [GitHub](https://github.com/hamzach9410/LLM-PROJECTS-PACK/issues)
         """)
 
 if __name__ == "__main__":

@@ -1,5 +1,12 @@
 # 🎮 AI Negotiation Battle Simulator
 
+Developed by **Ali Hamza** | AI/ML/DL Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Hamza-blue?logo=linkedin)](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+[![Email](https://img.shields.io/badge/Email-ihamzaali06%40gmail.com-red?logo=gmail)](mailto:ihamzaali06@gmail.com)
+
+---
+
 ### A Real-Time Agent vs Agent Showdown with AG-UI!
 
 Watch two AI agents battle it out in an epic used car negotiation! Built with **Google ADK** for the backend agents and **AG-UI + CopilotKit** for a jaw-dropping reactive frontend.
@@ -59,7 +66,7 @@ Watch two AI agents battle it out in an epic used car negotiation! Built with **
 ### 1. Clone and Navigate
 
 ```bash
-git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
+git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
 cd advanced_ai_agents/multi_agent_apps/ai_negotiation_battle_simulator
 ```
 
@@ -93,6 +100,7 @@ The frontend will start on `http://localhost:3000`
 ### 4. Start Negotiating! 🎮
 
 Open `http://localhost:3000` and tell the Battle Master:
+
 - "Start a negotiation for a used car"
 - "Show me available scenarios"
 - "Use Desperate Dan as buyer and Shark Steve as seller"
@@ -100,20 +108,22 @@ Open `http://localhost:3000` and tell the Battle Master:
 ## 🎭 Personalities
 
 ### Buyers
-| Personality | Emoji | Style |
-|-------------|-------|-------|
-| Desperate Dan | 😰 | Needs car TODAY, weak poker face |
-| Analytical Alex | 🧮 | Cites every data point, very logical |
-| Cool-Hand Casey | 😎 | Master of the walkaway bluff |
-| Fair-Deal Fran | 🤝 | Just wants a win-win |
+
+| Personality     | Emoji | Style                                |
+| --------------- | ----- | ------------------------------------ |
+| Desperate Dan   | 😰    | Needs car TODAY, weak poker face     |
+| Analytical Alex | 🧮    | Cites every data point, very logical |
+| Cool-Hand Casey | 😎    | Master of the walkaway bluff         |
+| Fair-Deal Fran  | 🤝    | Just wants a win-win                 |
 
 ### Sellers
-| Personality | Emoji | Style |
-|-------------|-------|-------|
-| Shark Steve | 🦈 | Never drops more than 5% |
-| By-The-Book Beth | 📊 | Goes strictly by KBB |
-| Motivated Mike | 😅 | Really needs to sell |
-| Drama Queen Diana | 🎭 | Everything is "final offer" |
+
+| Personality       | Emoji | Style                       |
+| ----------------- | ----- | --------------------------- |
+| Shark Steve       | 🦈    | Never drops more than 5%    |
+| By-The-Book Beth  | 📊    | Goes strictly by KBB        |
+| Motivated Mike    | 😅    | Really needs to sell        |
+| Drama Queen Diana | 🎭    | Everything is "final offer" |
 
 ## 📁 Project Structure
 
@@ -156,11 +166,11 @@ ai_negotiation_battle_simulator/
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 😎 COOL-HAND CASEY (Round 1):
-"I've seen similar Civics go for less. $11,500 seems fair 
+"I've seen similar Civics go for less. $11,500 seems fair
 given the market. Cash in hand today."
 
 🦈 SHARK STEVE (Round 1):
-"$15,000. This car is pristine. I've got two other 
+"$15,000. This car is pristine. I've got two other
 interested buyers coming this weekend."
 
 😎 COOL-HAND CASEY (Round 2):
@@ -206,6 +216,7 @@ interested buyers coming this weekend."
 ## 🤝 Contributing
 
 Feel free to add:
+
 - New negotiation scenarios (salary, apartment, contracts)
 - Additional personality types
 - More dramatic UI effects
@@ -213,4 +224,4 @@ Feel free to add:
 
 ---
 
-*May the best negotiator win!* 🏆
+_May the best negotiator win!_ 🏆

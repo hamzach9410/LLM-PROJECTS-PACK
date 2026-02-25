@@ -30,7 +30,7 @@ Given a competitor and your product, the pipeline automatically:
 
 ### 1. Navigate to Project
 ```bash
-cd awesome-llm-apps/advanced_ai_agents/multi_agent_apps/agent_team/ai_sales_intelligence_team
+cd LLM-PROJECTS-PACK/advanced_ai_agents/multi_agent_apps/agent_team/ai_sales_intelligence_team
 ```
 
 ### 2. Set Environment

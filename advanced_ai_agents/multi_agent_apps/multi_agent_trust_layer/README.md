@@ -1,4 +1,11 @@
-# 🤝 Multi-Agent Trust Layer - Secure Agent-to-Agent Communication
+# 🤝 Multi-Agent Trust Layer — Secure Agent-to-Agent Communication
+
+Developed by **Ali Hamza** | AI/ML/DL Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Hamza-blue?logo=linkedin)](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+[![Email](https://img.shields.io/badge/Email-ihamzaali06%40gmail.com-red?logo=gmail)](mailto:ihamzaali06@gmail.com)
+
+---
 
 Learn how to build a trust layer for multi-agent systems that enables secure delegation, trust scoring, and policy enforcement between AI agents.
 
@@ -39,8 +46,9 @@ Learn how to build a trust layer for multi-agent systems that enables secure del
 ## Installation
 
 1. Clone this repository:
+
    ```bash
-   git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
    cd advanced_ai_agents/multi_agent_apps/multi_agent_trust_layer
    ```
 
@@ -52,11 +60,13 @@ Learn how to build a trust layer for multi-agent systems that enables secure del
 ## Usage
 
 1. Set your API key:
+
    ```bash
    export OPENAI_API_KEY=your-openai-api-key
    ```
 
 2. Run the trust layer demo:
+
    ```bash
    python multi_agent_trust_layer.py
    ```
@@ -91,13 +101,13 @@ result = researcher.execute_with_delegation(
 
 Trust scores range from 0-1000:
 
-| Score Range | Level | Permissions |
-|-------------|-------|-------------|
-| 900-1000 | Trusted | Full access within role |
-| 700-899 | Standard | Normal operations |
-| 500-699 | Probation | Limited actions, extra logging |
-| 300-499 | Restricted | Human approval required |
-| 0-299 | Suspended | No autonomous actions |
+| Score Range | Level      | Permissions                    |
+| ----------- | ---------- | ------------------------------ |
+| 900-1000    | Trusted    | Full access within role        |
+| 700-899     | Standard   | Normal operations              |
+| 500-699     | Probation  | Limited actions, extra logging |
+| 300-499     | Restricted | Human approval required        |
+| 0-299       | Suspended  | No autonomous actions          |
 
 ### Score Updates
 
@@ -167,7 +177,7 @@ class AgentIdentity:
 Delegations form a chain where each link can only narrow scope:
 
 ```python
-@dataclass  
+@dataclass
 class Delegation:
     delegation_id: str
     parent_agent: str

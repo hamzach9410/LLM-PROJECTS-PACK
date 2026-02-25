@@ -47,8 +47,8 @@ The system uses a **Coordinator/Dispatcher pattern** with three specialized agen
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-cd awesome-llm-apps/advanced_ai_agents/multi_agent_apps/agent_teams/multimodal_uiux_feedback_agent_team
+git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+cd LLM-PROJECTS-PACK/advanced_ai_agents/multi_agent_apps/agent_teams/multimodal_uiux_feedback_agent_team
 ```
 
 ### 2. Install dependencies

@@ -1,6 +1,14 @@
-# AI Financial Coach Agent with Google ADK 💰
+# 💰 AI Financial Coach Agent with Google ADK
 
-### 🎓 FREE Step-by-Step Tutorial 
+Developed by **Ali Hamza** | AI/ML/DL Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Hamza-blue?logo=linkedin)](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+[![Email](https://img.shields.io/badge/Email-ihamzaali06%40gmail.com-red?logo=gmail)](mailto:ihamzaali06@gmail.com)
+
+---
+
+### 🎓 FREE Step-by-Step Tutorial
+
 **👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-a-multi-agent-personal-finance-coach) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
 
 The **AI Financial Coach** is a personalized financial advisor powered by Google's ADK (Agent Development Kit) framework. This app provides comprehensive financial analysis and recommendations based on user inputs including income, expenses, debts, and financial goals.
@@ -8,9 +16,9 @@ The **AI Financial Coach** is a personalized financial advisor powered by Google
 ## Features
 
 - **Multi-Agent Financial Analysis System**
-    - Budget Analysis Agent: Analyzes spending patterns and recommends optimizations
-    - Savings Strategy Agent: Creates personalized savings plans and emergency fund strategies
-    - Debt Reduction Agent: Develops optimized debt payoff strategies using avalanche and snowball methods
+  - Budget Analysis Agent: Analyzes spending patterns and recommends optimizations
+  - Savings Strategy Agent: Creates personalized savings plans and emergency fund strategies
+  - Debt Reduction Agent: Develops optimized debt payoff strategies using avalanche and snowball methods
 
 - **Expense Analysis**:
   - Supports both CSV upload and manual expense entry
@@ -36,7 +44,6 @@ The **AI Financial Coach** is a personalized financial advisor powered by Google
   - Debt comparison graphs
   - Progress tracking metrics
 
-
 ## How to Run
 
 Follow the steps below to set up and run the application:
@@ -49,12 +56,14 @@ Follow the steps below to set up and run the application:
      ```
 
 2. **Clone the Repository**:
+
    ```bash
-   git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-   cd awesome-llm-apps/advanced_ai_agents/multi_agent_apps/ai_financial_coach_agent/
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd LLM-PROJECTS-PACK/advanced_ai_agents/multi_agent_apps/ai_financial_coach_agent/
    ```
 
 3. **Install Dependencies**:
+
    ```bash
    pip install -r requirements.txt
    ```
@@ -67,11 +76,13 @@ Follow the steps below to set up and run the application:
 ## CSV File Format
 
 The application accepts CSV files with the following required columns:
+
 - `Date`: Transaction date in YYYY-MM-DD format
 - `Category`: Expense category
 - `Amount`: Transaction amount (supports currency symbols and comma formatting)
 
 Example:
+
 ```csv
 Date,Category,Amount
 2024-01-01,Housing,1200.00
