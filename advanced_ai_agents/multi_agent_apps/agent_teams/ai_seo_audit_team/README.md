@@ -1,6 +1,14 @@
 # 🔍 AI SEO Audit Team
 
-### 🎓 FREE Step-by-Step Tutorial 
+Developed by **Ali Hamza** | AI/ML/DL Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Hamza-blue?logo=linkedin)](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+[![Email](https://img.shields.io/badge/Email-ihamzaali06%40gmail.com-red?logo=gmail)](mailto:ihamzaali06@gmail.com)
+
+---
+
+### 🎓 FREE Step-by-Step Tutorial
+
 **👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-an-ai-seo-audit-team-with-gemini) and learn how to build this AI SEO Audit Team from scratch with detailed code walkthroughs, explanations, and best practices.**
 
 The **AI SEO Audit Team** is an autonomous, multi-agent workflow built with Google ADK. It takes a webpage URL, crawls the live page, researches real-time SERP competition, and produces a polished, prioritized SEO optimization report. The app uses **Firecrawl via MCP (Model Context Protocol)** for accurate page scraping and Google's Gemini 2.5 Flash for analysis and reporting.
@@ -23,17 +31,18 @@ The **AI SEO Audit Team** is an autonomous, multi-agent workflow built with Goog
 
 ## Agent Workflow
 
-| Step | Agent | Responsibilities |
-| --- | --- | --- |
-| 1 | **Page Auditor Agent** | Calls `firecrawl_scrape`, inspects page structure, summarizes technical/content signals, and infers target keywords. |
-| 2 | **Serp Analyst Agent** | Consumes the SERP data, extracts patterns, opportunities, PAA questions, and differentiation angles. |
-| 3 | **Optimization Advisor Agent** | Combines audit + SERP insights into a Markdown report with clear priorities and next steps. |
+| Step | Agent                          | Responsibilities                                                                                                     |
+| ---- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
+| 1    | **Page Auditor Agent**         | Calls `firecrawl_scrape`, inspects page structure, summarizes technical/content signals, and infers target keywords. |
+| 2    | **Serp Analyst Agent**         | Consumes the SERP data, extracts patterns, opportunities, PAA questions, and differentiation angles.                 |
+| 3    | **Optimization Advisor Agent** | Combines audit + SERP insights into a Markdown report with clear priorities and next steps.                          |
 
 All agents run sequentially using ADK’s `SequentialAgent`, passing state between stages via the shared session.
 
 ## Requirements
 
 ### System Requirements
+
 - **Python 3.10+** for Google ADK
 - **Node.js** (for Firecrawl MCP server via npx)
 
@@ -64,16 +73,19 @@ Alternatively, you can put these in a `.env` file if you prefer.
 ## Running the App with ADK Dev UI
 
 1. **Activate your environment** (optional but recommended):
+
    ```bash
    cd advanced_ai_agents/multi_agent_apps/agent_teams/ai_seo_audit_team
    ```
 
 2. **Install dependencies** (if not already):
+
    ```bash
    pip install -r requirements.txt
    ```
 
 3. **Launch the ADK web UI** from the project root:
+
    ```bash
    adk web
    ```
