@@ -1,6 +1,14 @@
-# AI Game Design Agent Team 🎮
+# 🎮 AI Game Design Agent Team
 
-### 🎓 FREE Step-by-Step Tutorial 
+Developed by **Ali Hamza** | AI/ML/DL Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Hamza-blue?logo=linkedin)](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+[![Email](https://img.shields.io/badge/Email-ihamzaali06%40gmail.com-red?logo=gmail)](mailto:ihamzaali06@gmail.com)
+
+---
+
+### 🎓 FREE Step-by-Step Tutorial
+
 **👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-an-ai-game-design-agent-team) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
 
 The AI Game Design Agent Team is a collaborative game design system powered by [AG2](https://github.com/ag2ai/ag2?tab=readme-ov-file)(formerly AutoGen)'s AI Agent framework. This app generates comprehensive game concepts through the coordination of multiple specialized AI agents, each focusing on different aspects of game design based on user inputs such as game type, target audience, art style, and technical requirements. This is built on AG2's new swarm feature run through initiate_chat() method.
@@ -8,7 +16,6 @@ The AI Game Design Agent Team is a collaborative game design system powered by [
 ## Features
 
 - **Specialized Game Design Agent Team**
-
   - 🎭 **Story Agent**: Specializes in narrative design and world-building, including character development, plot arcs, dialogue writing, and lore creation
   - 🎮 **Gameplay Agent**: Focuses on game mechanics and systems design, including player progression, combat systems, resource management, and balancing
   - 🎨 **Visuals Agent**: Handles art direction and audio design, covering UI/UX, character/environment art style, sound effects, and music composition
@@ -16,7 +23,6 @@ The AI Game Design Agent Team is a collaborative game design system powered by [
   - 🎯 **Task Agent**: Coordinates between all specialized agents and ensures cohesive integration of different game aspects
 
 - **Comprehensive Game Design Outputs**:
-
   - Detailed narrative and world-building elements
   - Core gameplay mechanics and systems
   - Visual and audio direction
@@ -25,7 +31,6 @@ The AI Game Design Agent Team is a collaborative game design system powered by [
   - Coherent game design from the team.
 
 - **Customizable Input Parameters**:
-
   - Game type and target audience
   - Art style and visual preferences
   - Platform requirements
@@ -54,7 +59,6 @@ Follow these steps to set up and run the application:
    ```
 
 3. **Set Up OpenAI API Key**:
-
    - Obtain an OpenAI API key from [OpenAI's platform](https://platform.openai.com)
    - You'll input this key in the app's sidebar when running
 
