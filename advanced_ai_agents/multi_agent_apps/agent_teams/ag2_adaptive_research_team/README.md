@@ -1,4 +1,11 @@
-# AG2 Adaptive Research Team
+# 🔬 AG2 Adaptive Research Team
+
+Developed by **Ali Hamza** | AI/ML/DL Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Hamza-blue?logo=linkedin)](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+[![Email](https://img.shields.io/badge/Email-ihamzaali06%40gmail.com-red?logo=gmail)](mailto:ihamzaali06@gmail.com)
+
+---
 
 A Streamlit app that blends agent teamwork with agent-enabled routing and fallback, built entirely on AG2.
 
