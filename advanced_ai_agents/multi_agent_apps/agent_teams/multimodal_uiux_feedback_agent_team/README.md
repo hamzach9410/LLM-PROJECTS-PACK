@@ -1,6 +1,14 @@
 # 🎨 🍌 Multimodal UI/UX Feedback Agent Team with Nano Banana
 
-### 🎓 FREE Step-by-Step Tutorial 
+Developed by **Ali Hamza** | AI/ML/DL Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Hamza-blue?logo=linkedin)](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+[![Email](https://img.shields.io/badge/Email-ihamzaali06%40gmail.com-red?logo=gmail)](mailto:ihamzaali06@gmail.com)
+
+---
+
+### 🎓 FREE Step-by-Step Tutorial
+
 **👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-an-ai-ui-ux-feedback-agent-team-with-nano-banana) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
 
 A sophisticated multi-agent system built with Google ADK that analyzes landing page designs, provides expert UI/UX feedback, and automatically generates improved versions using Gemini 2.5 Flash's multimodal capabilities.
@@ -46,44 +54,52 @@ The system uses a **Coordinator/Dispatcher pattern** with three specialized agen
 ## Quick Start
 
 ### 1. Clone the repository
+
 ```bash
 git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
 cd LLM-PROJECTS-PACK/advanced_ai_agents/multi_agent_apps/agent_teams/multimodal_uiux_feedback_agent_team
 ```
 
 ### 2. Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 3. Set up your API key
+
 ```bash
 export GOOGLE_API_KEY="your_gemini_api_key"
 ```
 
 Or create a `.env` file:
+
 ```
 GOOGLE_API_KEY=your_gemini_api_key
 ```
 
 ### 4. Launch ADK Web
+
 ```bash
 cd advanced_ai_agents/multi_agent_apps/agent_teams
 adk web
 ```
 
 ### 5. Open browser
+
 Navigate to the ADK Web interface and select **multimodal_uiux_feedback_agent_team**
 
 ## Tools & Capabilities
 
 ### Core Tools
+
 - **Direct Vision Analysis**: Agents can see and analyze uploaded images automatically (no tool needed)
 - **edit_landing_page_image**: Refine existing designs based on feedback
 - **generate_improved_landing_page**: Create new improved designs from scratch
 - **google_search**: Research UI/UX trends and best practices
 
 ### Features
+
 - **Native Vision Capabilities**: Agents automatically see uploaded images in conversations
 - **Versioned artifacts**: Automatic version tracking for all designs
 - **State management**: Maintains context across the conversation
@@ -101,7 +117,6 @@ Coordinator (Root Agent)
           ├── Design Strategist (improvement planning)
           └── Visual Implementer (generate improved design + report)
 ```
-
 
 ## Best Practices for Users
 

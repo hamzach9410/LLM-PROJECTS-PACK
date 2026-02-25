@@ -1,5 +1,12 @@
 # 📊 AI VC Due Diligence Agent Team
 
+Developed by **Ali Hamza** | AI/ML/DL Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Hamza-blue?logo=linkedin)](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+[![Email](https://img.shields.io/badge/Email-ihamzaali06%40gmail.com-red?logo=gmail)](mailto:ihamzaali06@gmail.com)
+
+---
+
 A multi-agent AI pipeline for startup investment analysis, built with [Google ADK](https://google.github.io/adk-docs/), Gemini 3 Pro, Gemini 3 Flash and Nano Banana Pro.
 
 **Works with any startup** - from early-stage unknowns to well-funded companies. Just provide a company name, website URL, or both.
@@ -28,12 +35,14 @@ Given a startup name or URL, the pipeline automatically:
 ## Quick Start
 
 ### 1. Clone & Navigate
+
 ```bash
 git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
 cd LLM-PROJECTS-PACK/advanced_ai_agents/multi_agent_apps/agent_teams/ai_vc_due_diligence_agent_team
 ```
 
 ### 2. Set Environment
+
 ```bash
 export GOOGLE_API_KEY=your_api_key
 # Or create .env file:
@@ -41,20 +50,22 @@ echo "GOOGLE_API_KEY=your_api_key" > .env
 ```
 
 ### 3. Install & Run
+
 ```bash
 pip install -r requirements.txt
 adk web
 ```
 
 ### 4. Try It
+
 Works with company names, URLs, or both:
 
 Open `http://localhost:8000` and try:
-- *"Analyze https://agno.com for Series A investment of $30-50M"*
-- *"Research Genspark AI for its next funding round"*
-- *"Analyze Lovable for Series C funding opportunities"*
-- *"Research emergent.sh for Series B funding in the $40-60M range"*
 
+- _"Analyze https://agno.com for Series A investment of $30-50M"_
+- _"Research Genspark AI for its next funding round"_
+- _"Analyze Lovable for Series C funding opportunities"_
+- _"Research emergent.sh for Series B funding in the $40-60M range"_
 
 ## Pipeline Architecture
 
@@ -98,13 +109,14 @@ Artifacts: revenue_chart.png, investment_report.html, infographic.png
 
 **Purpose:** Gathers comprehensive company information through web search.
 
-| Property | Value |
-|----------|-------|
-| Model | `gemini-3-flash-preview` |
-| Tools | `google_search` |
-| Output Key | `company_info` |
+| Property   | Value                    |
+| ---------- | ------------------------ |
+| Model      | `gemini-3-flash-preview` |
+| Tools      | `google_search`          |
+| Output Key | `company_info`           |
 
 **What it researches:**
+
 - **Company Basics** - What they do, founding date, HQ location, team size
 - **Founders & Team** - Key people, backgrounds, LinkedIn profiles
 - **Product/Technology** - Core offering, how it works, target customers
@@ -120,14 +132,15 @@ Artifacts: revenue_chart.png, investment_report.html, infographic.png
 
 **Purpose:** Analyzes market size, competition, and positioning.
 
-| Property | Value |
-|----------|-------|
-| Model | `gemini-3-flash-preview` |
-| Tools | `google_search` |
-| Input | `{company_info}` |
-| Output Key | `market_analysis` |
+| Property   | Value                    |
+| ---------- | ------------------------ |
+| Model      | `gemini-3-flash-preview` |
+| Tools      | `google_search`          |
+| Input      | `{company_info}`         |
+| Output Key | `market_analysis`        |
 
 **What it analyzes:**
+
 - **Market Size** - TAM, SAM, growth rate from industry reports
 - **Competitors** - Who else is in the space, their funding/traction
 - **Positioning** - How the company differentiates
@@ -141,14 +154,15 @@ Artifacts: revenue_chart.png, investment_report.html, infographic.png
 
 **Purpose:** Builds revenue projections and generates financial charts.
 
-| Property | Value |
-|----------|-------|
-| Model | `gemini-3-pro-preview` |
-| Tools | `generate_financial_chart` |
-| Input | `{company_info}`, `{market_analysis}` |
-| Output Key | `financial_model` |
+| Property   | Value                                 |
+| ---------- | ------------------------------------- |
+| Model      | `gemini-3-pro-preview`                |
+| Tools      | `generate_financial_chart`            |
+| Input      | `{company_info}`, `{market_analysis}` |
+| Output Key | `financial_model`                     |
 
 **What it calculates:**
+
 - **Current Metrics** - Estimated ARR, growth stage
 - **Growth Scenarios** (5-year projections):
   - Bear Case: Conservative growth rates
@@ -157,6 +171,7 @@ Artifacts: revenue_chart.png, investment_report.html, infographic.png
 - **Return Analysis** - Exit valuations, MOIC, IRR estimates
 
 **Stage benchmarks:**
+
 - Seed: $0.1-0.5M ARR, 3-5x growth
 - Series A: $1-3M ARR, 2-3x growth
 - Series B: $5-15M ARR, 1.5-2x growth
@@ -169,14 +184,15 @@ Artifacts: revenue_chart.png, investment_report.html, infographic.png
 
 **Purpose:** Conducts deep risk analysis across multiple categories.
 
-| Property | Value |
-|----------|-------|
-| Model | `gemini-3-pro-preview` |
-| Tools | None (extended reasoning) |
-| Input | `{company_info}`, `{market_analysis}`, `{financial_model}` |
-| Output Key | `risk_assessment` |
+| Property   | Value                                                      |
+| ---------- | ---------------------------------------------------------- |
+| Model      | `gemini-3-pro-preview`                                     |
+| Tools      | None (extended reasoning)                                  |
+| Input      | `{company_info}`, `{market_analysis}`, `{financial_model}` |
+| Output Key | `risk_assessment`                                          |
 
 **Risk categories analyzed:**
+
 1. **Market Risk** - Competition, timing, adoption barriers
 2. **Execution Risk** - Team gaps, technology challenges, scaling
 3. **Financial Risk** - Burn rate, fundraising, unit economics
@@ -184,11 +200,13 @@ Artifacts: revenue_chart.png, investment_report.html, infographic.png
 5. **Exit Risk** - Acquirer landscape, IPO viability
 
 **For each risk provides:**
+
 - Severity (Low/Medium/High/Critical)
 - Description with evidence
 - Mitigation strategy
 
 **Final output:**
+
 - Overall Risk Score (1-10)
 - Top 3 risks that could kill the investment
 - Recommended protective terms
@@ -199,14 +217,15 @@ Artifacts: revenue_chart.png, investment_report.html, infographic.png
 
 **Purpose:** Synthesizes all findings into a structured investment memo.
 
-| Property | Value |
-|----------|-------|
-| Model | `gemini-3-pro-preview` |
-| Tools | None |
-| Input | All previous stages |
-| Output Key | `investor_memo` |
+| Property   | Value                  |
+| ---------- | ---------------------- |
+| Model      | `gemini-3-pro-preview` |
+| Tools      | None                   |
+| Input      | All previous stages    |
+| Output Key | `investor_memo`        |
 
 **Memo structure:**
+
 1. **Executive Summary** - Company one-liner, recommendation, key highlights
 2. **Company Overview** - What they do, team, product/technology
 3. **Funding & Valuation** - History, estimated valuation range
@@ -224,14 +243,15 @@ Artifacts: revenue_chart.png, investment_report.html, infographic.png
 
 **Purpose:** Creates a professional HTML investment report.
 
-| Property | Value |
-|----------|-------|
-| Model | `gemini-3-flash-preview` |
-| Tools | `generate_html_report` |
-| Input | `{investor_memo}` |
-| Output Key | `html_report_result` |
+| Property   | Value                    |
+| ---------- | ------------------------ |
+| Model      | `gemini-3-flash-preview` |
+| Tools      | `generate_html_report`   |
+| Input      | `{investor_memo}`        |
+| Output Key | `html_report_result`     |
 
 **Report features:**
+
 - McKinsey/Goldman Sachs styling
 - Dark blue (#1a365d) and gold (#d4af37) color scheme
 - Executive summary at top
@@ -247,14 +267,15 @@ Artifacts: revenue_chart.png, investment_report.html, infographic.png
 
 **Purpose:** Creates a visual summary infographic using AI image generation.
 
-| Property | Value |
-|----------|-------|
-| Model | `gemini-3-flash-preview` |
-| Tools | `generate_infographic` (uses `gemini-3-pro-image-preview`) |
-| Input | `{investor_memo}` |
-| Output Key | `infographic_result` |
+| Property   | Value                                                      |
+| ---------- | ---------------------------------------------------------- |
+| Model      | `gemini-3-flash-preview`                                   |
+| Tools      | `generate_infographic` (uses `gemini-3-pro-image-preview`) |
+| Input      | `{investor_memo}`                                          |
+| Output Key | `infographic_result`                                       |
 
 **Infographic includes:**
+
 - Company name prominently displayed
 - Key metrics in large, bold numbers
 - Market size visualization
@@ -289,38 +310,38 @@ outputs/
 └── infographic_20260104_143105.png         # Visual TL;DR
 ```
 
-| Artifact | Format | Description |
-|----------|--------|-------------|
-| Revenue Chart | PNG | Bear/Base/Bull 5-year projections |
-| Investment Report | HTML | Full due diligence document |
-| Infographic | PNG/JPG | Visual summary one-pager |
+| Artifact          | Format  | Description                       |
+| ----------------- | ------- | --------------------------------- |
+| Revenue Chart     | PNG     | Bear/Base/Bull 5-year projections |
+| Investment Report | HTML    | Full due diligence document       |
+| Infographic       | PNG/JPG | Visual summary one-pager          |
 
 ---
 
 ## ADK Features Demonstrated
 
-| Feature | Usage |
-|---------|-------|
-| **SequentialAgent** | 7-stage pipeline orchestration |
-| **LlmAgent** | All specialized agents |
-| **google_search** | Real-time company/market research |
-| **Custom Tools** | Chart generation, HTML reports, infographics |
-| **Artifacts** | Saving and versioning generated files |
-| **State Management** | Passing data between pipeline stages via `output_key` |
-| **Multi-modal Output** | Text analysis + image generation |
+| Feature                | Usage                                                 |
+| ---------------------- | ----------------------------------------------------- |
+| **SequentialAgent**    | 7-stage pipeline orchestration                        |
+| **LlmAgent**           | All specialized agents                                |
+| **google_search**      | Real-time company/market research                     |
+| **Custom Tools**       | Chart generation, HTML reports, infographics          |
+| **Artifacts**          | Saving and versioning generated files                 |
+| **State Management**   | Passing data between pipeline stages via `output_key` |
+| **Multi-modal Output** | Text analysis + image generation                      |
 
 ## Models Used
 
-| Agent | Model | Why |
-|-------|-------|-----|
-| CompanyResearch | `gemini-3-flash-preview` | Fast web search |
-| MarketAnalysis | `gemini-3-flash-preview` | Fast web search |
-| FinancialModeling | `gemini-3-pro-preview` | Complex calculations |
-| RiskAssessment | `gemini-3-pro-preview` | Deep reasoning |
-| InvestorMemo | `gemini-3-pro-preview` | Synthesis quality |
-| ReportGenerator | `gemini-3-flash-preview` | Fast HTML generation |
-| InfographicGenerator | `gemini-3-flash-preview` | Orchestration |
-| Infographic Tool | `gemini-3-pro-image-preview` | Image generation |
+| Agent                | Model                        | Why                  |
+| -------------------- | ---------------------------- | -------------------- |
+| CompanyResearch      | `gemini-3-flash-preview`     | Fast web search      |
+| MarketAnalysis       | `gemini-3-flash-preview`     | Fast web search      |
+| FinancialModeling    | `gemini-3-pro-preview`       | Complex calculations |
+| RiskAssessment       | `gemini-3-pro-preview`       | Deep reasoning       |
+| InvestorMemo         | `gemini-3-pro-preview`       | Synthesis quality    |
+| ReportGenerator      | `gemini-3-flash-preview`     | Fast HTML generation |
+| InfographicGenerator | `gemini-3-flash-preview`     | Orchestration        |
+| Infographic Tool     | `gemini-3-pro-image-preview` | Image generation     |
 
 ---
 

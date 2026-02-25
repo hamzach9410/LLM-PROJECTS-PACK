@@ -1,20 +1,27 @@
-# Multimodal AI Design Agent Team
+# 🎨 Multimodal AI Design Agent Team
 
-### 🎓 FREE Step-by-Step Tutorial 
+Developed by **Ali Hamza** | AI/ML/DL Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Hamza-blue?logo=linkedin)](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+[![Email](https://img.shields.io/badge/Email-ihamzaali06%40gmail.com-red?logo=gmail)](mailto:ihamzaali06@gmail.com)
+
+---
+
+### 🎓 FREE Step-by-Step Tutorial
+
 **👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-a-multimodal-ai-agent-design-team) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
 
-A Streamlit application that provides comprehensive design analysis using a team of specialized AI agents powered by Google's Gemini model. 
+A Streamlit application that provides comprehensive design analysis using a team of specialized AI agents powered by Google's Gemini model.
 
 This application leverages multiple specialized AI agents to provide comprehensive analysis of UI/UX designs of your product and your competitors, combining visual understanding, user experience evaluation, and market research insights.
 
 ## Features
 
 - **Specialized Design AI Agent Team**
+  - 🎨 **Visual Design Agent**: Evaluates design elements, patterns, color schemes, typography, and visual hierarchy
+  - 🔄 **UX Analysis Agent**: Assesses user flows, interaction patterns, usability, and accessibility
+  - 📊 **Market Analysis Agent**: Provides market insights, competitor analysis, and positioning recommendations
 
-   - 🎨 **Visual Design Agent**: Evaluates design elements, patterns, color schemes, typography, and visual hierarchy
-   - 🔄 **UX Analysis Agent**: Assesses user flows, interaction patterns, usability, and accessibility
-   - 📊 **Market Analysis Agent**: Provides market insights, competitor analysis, and positioning recommendations
-   
 - **Multiple Analysis Types**: Choose from Visual Design, UX, and Market Analysis
 - **Comparative Analysis**: Upload competitor designs for comparative insights
 - **Customizable Focus Areas**: Select specific aspects for detailed analysis
@@ -25,6 +32,7 @@ This application leverages multiple specialized AI agents to provide comprehensi
 ## How to Run
 
 1. **Setup Environment**
+
    ```bash
    # Clone the repository
    git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
@@ -43,6 +51,7 @@ This application leverages multiple specialized AI agents to provide comprehensi
    - Generate an API key
 
 3. **Run the Application**
+
    ```bash
    streamlit run design_agent_team.py
    ```
@@ -53,7 +62,6 @@ This application leverages multiple specialized AI agents to provide comprehensi
    - Select analysis types and focus areas
    - Add context if needed
    - Click "Run Analysis" to get insights
-
 
 ## Technical Stack
 
@@ -69,4 +77,3 @@ This application leverages multiple specialized AI agents to provide comprehensi
 - Include multiple views/screens for better context
 - Add competitor designs for comparative analysis
 - Provide specific context about your target audience
-

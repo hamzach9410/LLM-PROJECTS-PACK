@@ -1,4 +1,11 @@
-# ✈️ TripCraft AI
+# ✈️ TripCraft AI: AI Travel Planner Agent Team
+
+Developed by **Ali Hamza** | AI/ML/DL Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Hamza-blue?logo=linkedin)](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+[![Email](https://img.shields.io/badge/Email-ihamzaali06%40gmail.com-red?logo=gmail)](mailto:ihamzaali06@gmail.com)
+
+---
 
 **Your journey, perfectly crafted with intelligence.**
 
@@ -17,6 +24,7 @@ Make travel planning effortless and personal. No stress, no endless research—j
 3. **🗺️ Get Your Itinerary** - Receive a complete day-by-day plan with bookings, costs, and recommendations
 
 ### Key Features
+
 - **Personalized Planning** - Tailored to your travel style and interests
 - **Hidden Gems Discovery** - Beyond typical tourist spots using advanced search
 - **Smart Optimization** - Balances cost, time, and experience
