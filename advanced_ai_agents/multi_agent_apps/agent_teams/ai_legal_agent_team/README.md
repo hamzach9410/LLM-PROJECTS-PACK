@@ -1,6 +1,14 @@
 # 👨‍⚖️ AI Legal Agent Team
 
-### 🎓 FREE Step-by-Step Tutorial 
+Developed by **Ali Hamza** | AI/ML/DL Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Hamza-blue?logo=linkedin)](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+[![Email](https://img.shields.io/badge/Email-ihamzaali06%40gmail.com-red?logo=gmail)](mailto:ihamzaali06@gmail.com)
+
+---
+
+### 🎓 FREE Step-by-Step Tutorial
+
 **👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-an-ai-legal-team-run-by-ai-agents) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
 
 A Streamlit application that simulates a full-service legal team using multiple AI agents to analyze legal documents and provide comprehensive legal insights. Each agent represents a different legal specialist role, from research and contract analysis to strategic planning, working together to provide thorough legal analysis and recommendations.
@@ -9,11 +17,8 @@ A Streamlit application that simulates a full-service legal team using multiple 
 
 - **Specialized Legal AI Agent Team**
   - **Legal Researcher**: Equipped with DuckDuckGo search tool to find and cite relevant legal cases and precedents. Provides detailed research summaries with sources and references specific sections from uploaded documents.
-  
   - **Contract Analyst**: Specializes in thorough contract review, identifying key terms, obligations, and potential issues. References specific clauses from documents for detailed analysis.
-  
   - **Legal Strategist**: Focuses on developing comprehensive legal strategies, providing actionable recommendations while considering both risks and opportunities.
-  
   - **Team Lead**: Coordinates analysis between team members, ensures comprehensive responses, properly sourced recommendations, and references to specific document parts. Acts as an Agent Team coordinator for all three agents.
 
 - **Document Analysis Types**
@@ -26,11 +31,12 @@ A Streamlit application that simulates a full-service legal team using multiple 
 ## How to Run
 
 1. **Setup Environment**
+
    ```bash
    # Clone the repository
    git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
    cd advanced_ai_agents/multi_agent_apps/agent_teams/ai_legal_agent_team
-   
+
    # Install dependencies
    pip install -r requirements.txt
    ```
