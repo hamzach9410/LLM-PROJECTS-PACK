@@ -1,4 +1,4 @@
-# 🌍 AQI Analysis Agent
+# 🌍 AQI Analysis Agent: Multi-Agent Air Quality Intelligence
 
 Developed by **Ali Hamza** | AI/ML/DL Engineer
 
@@ -11,85 +11,106 @@ Developed by **Ali Hamza** | AI/ML/DL Engineer
 
 **👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-an-aqi-analysis-agent) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
 
-The AQI Analysis Agent is a powerful air quality monitoring and health recommendation tool powered by Firecrawl and Agno's AI Agent framework. This app helps users make informed decisions about outdoor activities by analyzing real-time air quality data and providing personalized health recommendations.
+---
 
-## Features
+## 📌 Overview
 
-- **Multi-Agent System**
-  - **AQI Analyzer**: Fetches and processes real-time air quality data
-  - **Health Recommendation Agent**: Generates personalized health advice
+The **AQI Analysis Agent** is a sophisticated multi-agent system designed for real-time air quality monitoring and personalized health advisory. Built using the **Agno Agent Framework** and **Firecrawl**, it bridges the gap between raw atmospheric data and actionable health insights by analyzing local pollutants and weather conditions against a user's specific medical context and planned activities.
 
-- **Air Quality Metrics**:
-  - Overall Air Quality Index (AQI)
-  - Particulate Matter (PM2.5 and PM10)
-  - Carbon Monoxide (CO) levels
-  - Temperature
-  - Humidity
-  - Wind Speed
+## 🏗️ Architecture
 
-- **Comprehensive Analysis**:
-  - Real-time data visualization
-  - Health impact assessment
-  - Activity safety recommendations
-  - Best time suggestions for outdoor activities
-  - Weather condition correlations
+The system employs a coordinated workflow between specialized agents and high-performance data extraction tools:
 
-- **Interactive Features**:
-  - Location-based analysis
-  - Medical condition considerations
-  - Activity-specific recommendations
-  - Downloadable reports
-  - Example queries for quick testing
+```mermaid
+graph TD
+    User([User Input]) --> UI[Streamlit/Gradio Interface]
+    UI -->|Location & Activity| Analyzer[AQI Analyzer Agent]
 
-## How to Run
+    subgraph Data Extraction
+        Analyzer -->|Firecrawl Extract| Web[AQI.in Dashboard]
+        Web -->|Raw Web Content| Firecrawl[Firecrawl Search/Scrape]
+        Firecrawl -->|Structured JSON| Analyzer
+    end
 
-Follow these steps to set up and run the application:
+    subgraph Health Intelligence
+        Analyzer -->|AQI + PM2.5 + Weather| Recommender[Health Recommendation Agent]
+        UI -->|Medical History| Recommender
+        Recommender -->|LLM Reasoning| FinalResult[Personalized Recommendations]
+    end
 
-1. **Clone the Repository**:
+    FinalResult --> UI
+```
 
-   ```bash
-   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
-   cd starter_ai_agents/ai_aqi_analysis_agent
-   ```
+## 🤖 Agent Roles
 
-2. **Install the dependencies**:
+1.  **AQI Analyzer (Data Specialist)**:
+    - **Goal**: Fetch and structure real-time air quality data.
+    - **Tools**: Firecrawl Extract (LLM-powered scraping).
+    - **Logic**: Dynamically formats URLs for thousands of cities globally and extracts PM2.5, PM10, CO, and weather metrics.
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+2.  **Health Recommender (Medical Reasoning)**:
+    - **Goal**: Translate environmental risk into activity-safe advice.
+    - **Model**: GPT-4o.
+    - **Logic**: Correlates AQI levels with user-provided medical conditions (e.g., Asthma, COPD) to provide "Go/No-Go" decisions for outdoor activities.
 
-3. **Set up your API keys**:
-   - Get an OpenAI API key from: https://platform.openai.com/api-keys
-   - Get a Firecrawl API key from: [Firecrawl website](https://www.firecrawl.dev/app/api-keys)
+## ✨ Features
 
-4. **Run the Gradio app**:
+- **Real-time extraction** of 7+ environmental metrics (AQI, PM2.5, PM10, CO, Temp, Humidity, Wind).
+- **Dynamic URL routing** supporting global locations (City, State, Country).
+- **Medical context awareness** for tailored safety advice.
+- **Dual Interface Support**: Use either **Streamlit** (for complex reports) or **Gradio** (for simple chat-like analysis).
+- **Portable JSON output** and downloadable recommendation reports.
 
-   ```bash
-   python ai_aqi_analysis_agent.py
-   ```
+## 🚀 Getting Started
 
-5. **Access the Web Interface**:
-   - The terminal will display two URLs:
-     - Local URL: `http://127.0.0.1:7860` (for local access)
-     - Public URL: `https://xxx-xxx-xxx.gradio.live` (for temporary public access)
-   - Click on either URL to open the web interface in your browser
+### 1. Installation
 
-## Usage
+```bash
+# Clone the repository
+git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+cd advanced_ai_agents/multi_agent_apps/ai_aqi_analysis_agent
 
-1. Enter your API keys in the API Configuration section
-2. Input location details:
-   - City name
-   - State (optional for Union Territories/US cities)
-   - Country
-3. Provide personal information:
-   - Medical conditions (optional)
-   - Planned outdoor activity
-4. Click "Analyze & Get Recommendations" to receive:
-   - Current air quality data
-   - Health impact analysis
-   - Activity safety recommendations
-5. Try the example queries for quick testing
+# Install dependencies
+pip install -r requirements.txt
+```
 
-## Note
+### 2. Configuration
 
-The air quality data is fetched using Firecrawl's web scraping capabilities. Due to caching and rate limiting, the data might not always match real-time values on the website. For the most accurate real-time data, consider checking the source website directly.
+You will need the following API keys:
+
+- **OpenAI API Key**: For agent reasoning. [Get it here](https://platform.openai.com/).
+- **Firecrawl API Key**: For web extraction. [Get it here](https://firecrawl.dev/).
+
+### 3. Running the Application
+
+Choose your preferred interface:
+
+**Option A: Streamlit (Recommended for full reports)**
+
+```bash
+streamlit run ai_aqi_analysis_agent_streamlit.py
+```
+
+**Option B: Gradio (Simple web interface)**
+
+```bash
+python ai_aqi_analysis_agent_gradio.py
+```
+
+## 📁 Project Structure
+
+```text
+ai_aqi_analysis_agent/
+├── ai_aqi_analysis_agent_streamlit.py  # Streamlit UI & Core Logic
+├── ai_aqi_analysis_agent_gradio.py     # Gradio Interface Version
+├── requirements.txt                    # Project Dependencies
+└── README.md                           # Documentation
+```
+
+## ⚠️ Important Note
+
+Air quality data is extracted via web scraping of live dashboards. While highly effective, results may occasionally reflect cached values from the source website. For mission-critical decisions, always cross-reference with official local sensors.
+
+---
+
+_Built with ❤️ for a healthier future._
