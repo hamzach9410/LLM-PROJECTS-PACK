@@ -1,4 +1,11 @@
-# 👨🏻‍💼 AI Sales Intelligence Agent Team 
+# 👨🏻‍💼 AI Sales Intelligence Agent Team
+
+Developed by **Ali Hamza** | AI/ML/DL Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Hamza-blue?logo=linkedin)](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+[![Email](https://img.shields.io/badge/Email-ihamzaali06%40gmail.com-red?logo=gmail)](mailto:ihamzaali06@gmail.com)
+
+---
 
 A multi-agent AI pipeline that generates competitive sales battle cards in real-time, built with [Google ADK](https://google.github.io/adk-docs/) and Gemini 3.
 
@@ -29,35 +36,40 @@ Given a competitor and your product, the pipeline automatically:
 ## Quick Start
 
 ### 1. Navigate to Project
+
 ```bash
 cd LLM-PROJECTS-PACK/advanced_ai_agents/multi_agent_apps/agent_team/ai_sales_intelligence_team
 ```
 
 ### 2. Set Environment
+
 ```bash
 export GOOGLE_API_KEY=your_api_key
 ```
 
 ### 3. Install & Run
+
 ```bash
 pip install -r requirements.txt
 adk web
 ```
 
 ### 4. Try It
+
 Open `http://localhost:8000` and try:
-- *"Create a battle card for Salesforce. We sell HubSpot."*
-- *"Battle card against Slack - we're selling Microsoft Teams"*
-- *"Help me compete against Zendesk, I sell Freshdesk"*
+
+- _"Create a battle card for Salesforce. We sell HubSpot."_
+- _"Battle card against Slack - we're selling Microsoft Teams"_
+- _"Help me compete against Zendesk, I sell Freshdesk"_
 
 ## Example Prompts
 
-| Your Product | Competitor | Prompt |
-|--------------|------------|--------|
-| HubSpot | Salesforce | "Create a battle card for Salesforce. We sell HubSpot." |
-| Asana | Monday.com | "Battle card against Monday.com, I sell Asana" |
-| Zoom | Microsoft Teams | "Competitive analysis: Zoom vs our product Teams" |
-| Notion | Confluence | "Help me compete against Confluence, we're Notion" |
+| Your Product | Competitor      | Prompt                                                  |
+| ------------ | --------------- | ------------------------------------------------------- |
+| HubSpot      | Salesforce      | "Create a battle card for Salesforce. We sell HubSpot." |
+| Asana        | Monday.com      | "Battle card against Monday.com, I sell Asana"          |
+| Zoom         | Microsoft Teams | "Competitive analysis: Zoom vs our product Teams"       |
+| Notion       | Confluence      | "Help me compete against Confluence, we're Notion"      |
 
 ---
 
@@ -103,13 +115,14 @@ Artifacts: battle_card.html, comparison_chart.png
 
 **Purpose:** Gathers comprehensive competitor intelligence through web search.
 
-| Property | Value |
-|----------|-------|
-| Model | `gemini-3-flash-preview` |
-| Tools | `google_search` |
-| Output Key | `competitor_profile` |
+| Property   | Value                    |
+| ---------- | ------------------------ |
+| Model      | `gemini-3-flash-preview` |
+| Tools      | `google_search`          |
+| Output Key | `competitor_profile`     |
 
 **Researches:**
+
 - Company overview (founded, HQ, size, funding)
 - Target market and ideal customers
 - Products and pricing tiers
@@ -122,13 +135,14 @@ Artifacts: battle_card.html, comparison_chart.png
 
 **Purpose:** Deep analysis of competitor product capabilities.
 
-| Property | Value |
-|----------|-------|
-| Model | `gemini-3-flash-preview` |
-| Tools | `google_search` |
-| Output Key | `feature_analysis` |
+| Property   | Value                    |
+| ---------- | ------------------------ |
+| Model      | `gemini-3-flash-preview` |
+| Tools      | `google_search`          |
+| Output Key | `feature_analysis`       |
 
 **Analyzes:**
+
 - Core features and capabilities
 - Integrations and ecosystem
 - Technical architecture (cloud, API, mobile)
@@ -141,13 +155,14 @@ Artifacts: battle_card.html, comparison_chart.png
 
 **Purpose:** Uncovers competitor positioning and messaging strategy.
 
-| Property | Value |
-|----------|-------|
-| Model | `gemini-3-pro-preview` |
-| Tools | `google_search` |
-| Output Key | `positioning_intel` |
+| Property   | Value                  |
+| ---------- | ---------------------- |
+| Model      | `gemini-3-pro-preview` |
+| Tools      | `google_search`        |
+| Output Key | `positioning_intel`    |
 
 **Discovers:**
+
 - Marketing messaging and taglines
 - Target personas they focus on
 - How they position against YOUR product
@@ -160,13 +175,14 @@ Artifacts: battle_card.html, comparison_chart.png
 
 **Purpose:** Creates honest strengths/weaknesses analysis.
 
-| Property | Value |
-|----------|-------|
-| Model | `gemini-3-pro-preview` |
-| Tools | None (synthesis) |
-| Output Key | `swot_analysis` |
+| Property   | Value                  |
+| ---------- | ---------------------- |
+| Model      | `gemini-3-pro-preview` |
+| Tools      | None (synthesis)       |
+| Output Key | `swot_analysis`        |
 
 **Produces:**
+
 - Top 5 competitor strengths (with evidence)
 - Top 5 competitor weaknesses
 - Where YOU win against them
@@ -178,13 +194,14 @@ Artifacts: battle_card.html, comparison_chart.png
 
 **Purpose:** Creates scripts for handling competitive objections.
 
-| Property | Value |
-|----------|-------|
-| Model | `gemini-3-pro-preview` |
-| Tools | None (synthesis) |
-| Output Key | `objection_scripts` |
+| Property   | Value                  |
+| ---------- | ---------------------- |
+| Model      | `gemini-3-pro-preview` |
+| Tools      | None (synthesis)       |
+| Output Key | `objection_scripts`    |
 
 **Creates:**
+
 - Top 10 objections with scripted responses
 - Proof points for each response
 - Killer questions to ask prospects
@@ -196,13 +213,14 @@ Artifacts: battle_card.html, comparison_chart.png
 
 **Purpose:** Generates professional HTML battle card.
 
-| Property | Value |
-|----------|-------|
-| Model | `gemini-3-flash-preview` |
-| Tools | `generate_battle_card_html` |
-| Output Key | `battle_card_result` |
+| Property   | Value                       |
+| ---------- | --------------------------- |
+| Model      | `gemini-3-flash-preview`    |
+| Tools      | `generate_battle_card_html` |
+| Output Key | `battle_card_result`        |
 
 **Battle Card Includes:**
+
 - Quick stats header
 - At-a-glance comparison (We Win / They Win / Toss-up)
 - Feature comparison table
@@ -218,13 +236,14 @@ Artifacts: battle_card.html, comparison_chart.png
 
 **Purpose:** Creates visual comparison infographic using Gemini image generation.
 
-| Property | Value |
-|----------|-------|
-| Model | `gemini-3-flash-preview` |
-| Tools | `generate_comparison_chart` (uses `gemini-2.0-flash-exp`) |
-| Output Key | `chart_result` |
+| Property   | Value                                                     |
+| ---------- | --------------------------------------------------------- |
+| Model      | `gemini-3-flash-preview`                                  |
+| Tools      | `generate_comparison_chart` (uses `gemini-2.0-flash-exp`) |
+| Output Key | `chart_result`                                            |
 
 **Infographic Features:**
+
 - AI-generated professional comparison graphic
 - Side-by-side feature comparison visualization
 - Color-coded scores (green = you, red = competitor)
@@ -257,9 +276,9 @@ outputs/
 └── comparison_infographic_20260104_143105.png # AI-generated comparison visual
 ```
 
-| Artifact | Format | Description |
-|----------|--------|-------------|
-| Battle Card | HTML | Sales-ready competitive battle card |
+| Artifact               | Format  | Description                                   |
+| ---------------------- | ------- | --------------------------------------------- |
+| Battle Card            | HTML    | Sales-ready competitive battle card           |
 | Comparison Infographic | PNG/JPG | AI-generated visual comparison (Gemini image) |
 
 ---
@@ -282,28 +301,28 @@ The generated HTML battle card includes:
 
 ## ADK Features Demonstrated
 
-| Feature | Usage |
-|---------|-------|
-| **SequentialAgent** | 7-stage pipeline orchestration |
-| **google_search** | Real-time competitor research |
-| **Custom Tools** | HTML battle card, AI-generated infographics |
-| **Image Generation** | Gemini image model for comparison visuals |
-| **Artifacts** | Saving battle cards per session |
-| **State Management** | Passing research between stages via `output_key` |
-| **Coordinator Pattern** | Root agent routes to pipeline |
+| Feature                 | Usage                                            |
+| ----------------------- | ------------------------------------------------ |
+| **SequentialAgent**     | 7-stage pipeline orchestration                   |
+| **google_search**       | Real-time competitor research                    |
+| **Custom Tools**        | HTML battle card, AI-generated infographics      |
+| **Image Generation**    | Gemini image model for comparison visuals        |
+| **Artifacts**           | Saving battle cards per session                  |
+| **State Management**    | Passing research between stages via `output_key` |
+| **Coordinator Pattern** | Root agent routes to pipeline                    |
 
 ## Models Used
 
-| Agent | Model | Why |
-|-------|-------|-----|
-| CompetitorResearch | `gemini-3-flash-preview` | Fast web search |
-| ProductFeature | `gemini-3-flash-preview` | Fast web search |
-| PositioningAnalyzer | `gemini-3-pro-preview` | Strategic analysis |
-| SWOT | `gemini-3-pro-preview` | Deep synthesis |
-| ObjectionHandler | `gemini-3-pro-preview` | Script quality |
-| BattleCardGenerator | `gemini-3-flash-preview` | HTML generation |
-| ComparisonChart Agent | `gemini-3-flash-preview` | Orchestration |
-| Comparison Tool | `gemini-3-pro-image-preview` | Image generation |
+| Agent                 | Model                        | Why                |
+| --------------------- | ---------------------------- | ------------------ |
+| CompetitorResearch    | `gemini-3-flash-preview`     | Fast web search    |
+| ProductFeature        | `gemini-3-flash-preview`     | Fast web search    |
+| PositioningAnalyzer   | `gemini-3-pro-preview`       | Strategic analysis |
+| SWOT                  | `gemini-3-pro-preview`       | Deep synthesis     |
+| ObjectionHandler      | `gemini-3-pro-preview`       | Script quality     |
+| BattleCardGenerator   | `gemini-3-flash-preview`     | HTML generation    |
+| ComparisonChart Agent | `gemini-3-flash-preview`     | Orchestration      |
+| Comparison Tool       | `gemini-3-pro-image-preview` | Image generation   |
 
 ---
 
@@ -312,4 +331,3 @@ The generated HTML battle card includes:
 - [Google ADK Documentation](https://google.github.io/adk-docs/)
 - [Multi-Agent Patterns in ADK](https://developers.googleblog.com/developers-guide-to-multi-agent-patterns-in-adk/)
 - [Gemini API](https://ai.google.dev/gemini-api/docs)
-
