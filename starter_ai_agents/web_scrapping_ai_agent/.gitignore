@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+env/
+
+# Streamlit
+.streamlit/
+
+# Scrape results or temporary files
+*.json
+*.csv
+*.md
+
+# OS
+.DS_Store
+Thumbs.db
