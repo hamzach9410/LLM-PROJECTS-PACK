@@ -1,50 +1,62 @@
-# OpenAI Researcher Agent
-A multi-agent research application built with OpenAI's Agents SDK and Streamlit. This application enables users to conduct comprehensive research on any topic by leveraging multiple specialized AI agents.
+# 📰 OpenAI Research Intelligence Platform
 
-### Features
+A professional-grade multi-agent research system built with the OpenAI Agents SDK. It coordinates between Triage, Research, and Editor agents to generate comprehensive, structured research reports.
 
-- Multi-Agent Architecture:
-    - Triage Agent: Plans the research approach and coordinates the workflow
-    - Research Agent: Searches the web and gathers relevant information
-    - Editor Agent: Compiles collected facts into a comprehensive report
+## 🌟 Features
 
-- Automatic Fact Collection: Captures important facts from research with source attribution
-- Structured Report Generation: Creates well-organized reports with titles, outlines, and source citations
-- Interactive UI: Built with Streamlit for easy research topic input and results viewing
-- Tracing and Monitoring: Integrated tracing for the entire research workflow
+- **Multi-Agent Orchestration**: Powered by OpenAI's Agents SDK for seamless coordination.
+- **Structured Planning**: Triage agent creates a detailed research plan before execution.
+- **Deep Research**: Research agent explores the web and extracts critical facts with sources.
+- **Comprehensive Reporting**: Editor agent synthesizes findings into detailed, 1000+ word reports.
+- **Interactive Dashboard**: Modern Streamlit UI with real-time status tracking and session history.
+- **Export Ready**: Download generated reports as professional Markdown files.
 
-### How to get Started?
+## 🏗️ Architecture
 
-1. Clone the GitHub repository
-```bash
-git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-cd awesome-llm-apps/ai_agent_tutorials/openai_researcher_agent
+```mermaid
+graph TD
+    User([User]) --> UI[Streamlit App]
+    UI --> Triage[Triage Agent]
+    Triage --> Plan[Research Plan]
+    Plan --> Research[Research Agent]
+    Research --> Web[Web Search Tool]
+    Research --> Facts[Save Fact Tool]
+    Facts --> DB[(Knowledge Base)]
+    Research --> Editor[Editor Agent]
+    Editor --> DB
+    Editor --> Report[Research Report]
+    Report --> UI
 ```
 
-2. Install the required dependencies:
+## 🛠️ Quick Start
 
-```bash
-cd awesome-llm-apps/ai_agent_tutorials/openai_researcher_agent
-pip install -r requirements.txt
-```
+1. **Clone & Install**:
 
-3. Get your OpenAI API Key
+   ```bash
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd starter_ai_agents/opeani_research_agent
+   pip install -r requirements.txt
+   ```
 
-- - Sign up for an [OpenAI account](https://platform.openai.com/) and obtain your API key.
-- Set your OPENAI_API_KEY environment variable.
-```bash
-export OPENAI_API_KEY='your-api-key-here'
-```
+2. **Configure API Keys**:
+   Create a `.env` file or set the environment variable:
 
-4. Run the team of AI Agents
-```bash
-streamlit run openai_researcher_agent.py
-```
+   ```env
+   OPENAI_API_KEY=your_openai_key_here
+   ```
 
-Then open your browser and navigate to the URL shown in the terminal (typically http://localhost:8501).
+3. **Run the App**:
+   ```bash
+   streamlit run app.py
+   ```
 
-### Research Process:
-- Enter a research topic in the sidebar or select one of the provided examples
-- Click "Start Research" to begin the process
-- View the research process in real-time on the "Research Process" tab
-- Once complete, switch to the "Report" tab to view and download the generated report
+## 📦 Project Structure
+
+- `app.py`: Main dashboard entry point.
+- `agents_config.py`: Definitive agent configuration and instructions.
+- `models.py`: Pydantic data models for structured outputs.
+- `utils.py`: Shared tools and logging configuration.
+
+## 🚀 20 Contributions
+
+This project has been transformed from a single-file script into a robust research platform with modular code, advanced UI, and enhanced reporting logic.
