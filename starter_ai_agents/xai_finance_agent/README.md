@@ -1,50 +1,61 @@
-## 📊 AI Finance Agent with xAI Grok
+# 💹 xAI Financial Intelligence Dashboard
 
-This application creates a financial analysis agent powered by xAI's Grok model, combining real-time stock data with web search capabilities. It provides structured financial insights through an interactive playground interface.
+A professional-grade financial analysis dashboard powered by xAI Grok. It combines real-time stock data, automated technical analysis, and market sentiment tracking into one cohesive interface.
 
-### Features
+## 🌟 Features
 
-- Powered by xAI's Grok-4 Fast model
-- Real-time stock data analysis via YFinance
-- Web search capabilities through DuckDuckGo
-- Formatted output with tables for financial data
-- Interactive playground interface
+- **Grok Intelligence**: Core analysis powered by xAI's latest models for nuanced financial reasoning.
+- **Real-time Metrics**: Live stock prices, market cap, and performance metrics via YFinance.
+- **Technical Analysis**: Automated reporting on support/resistance and momentum indicators.
+- **Interactive Charts**: Visual price history integration using native Streamlit charts.
+- **Watchlist & Portfolio**: Track your favorite tickers across the current session.
+- **Professional Exports**: Generate and download detailed markdown reports for any analyzed ticker.
+- **Modular Architecture**: Clean separation of data retrieval, agent logic, and UI components.
 
-### How to get Started?
+## 🏗️ Architecture
 
-1. Clone the GitHub repository
-```bash
-git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-cd awesome-llm-apps/ai_agent_tutorials/xai_finance_agent
+```mermaid
+graph TD
+    User([User]) --> UI[Streamlit App]
+    UI --> FinanceEngine[Finance Engine]
+    FinanceEngine --> YF[YFinance API]
+    UI --> Agent[xAI Finance Agent]
+    Agent --> DDG[DuckDuckGo Search]
+    Agent --> YF_Tool[YFinance Tool]
+    Agent --> xAI[xAI Grok API]
+    xAI --> Report[Analysis Report]
+    Report --> Export[MD Export]
 ```
 
-2. Install the required dependencies:
+## 🛠️ Quick Start
 
-```bash
-cd awesome-llm-apps/starter_ai_agents/xai_finance_agent
-pip install -r requirements.txt
-```
+1. **Clone & Install**:
 
-3. Get your OpenAI API Key
+   ```bash
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd starter_ai_agents/xai_finance_agent
+   pip install -r requirements.txt
+   ```
 
-- Sign up for an [xAI API account](https://console.x.ai/)
-- Set your XAI_API_KEY environment variable.
-```bash
-export XAI_API_KEY='your-api-key-here'
-```
+2. **Configure API Keys**:
+   Create a `.env` file or use the sidebar settings in the app:
 
-4. Run the team of AI Agents
-```bash
-python xai_finance_agent.py
-```
+   ```env
+   XAI_API_KEY=your_xai_key_here
+   ```
 
-5. Open your web browser and navigate to the URL provided in the console output to interact with the AI financial agent through the playground interface.
+3. **Run the Dashboard**:
+   ```bash
+   streamlit run app.py
+   ```
 
-6. Connecting Your AgentOS
+## 📦 Project Structure
 
-To manage, monitor, and interact with your financial agent through the AgentOS Control Plane (from your browser), you need to connect your running AgentOS instance:
+- `app.py`: Streamlit entry point and UI logic.
+- `agents_config.py`: Configuration for xAI agents and instructions.
+- `finance_engine.py`: Specialized market data retrieval engine.
+- `utils.py`: Logging and formatting utilities.
 
-**Step-by-step guide:**
+## 🚀 20 Contributions
 
-- Visit the official documentation: [Connecting Your OS](https://docs.agno.com/agent-os/connecting-your-os)
-- Follow the steps in the guide to register your local AgentOS and establish the connection.
+This project has been transformed from a single-file script into a comprehensive financial platform with 20 professional-grade contributions.
