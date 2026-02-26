@@ -1,71 +1,58 @@
-# 🎙️ Customer Support Voice Agent
+# 🎙️ Customer Support Voice Agent with OpenAI Agents SDK
 
-### 🎓 FREE Step-by-Step Tutorial 
-**👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-a-customer-support-voice-agent) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
+A professional-grade, voice-powered customer support assistant that crawls your documentation URLs and provides intelligent, narrated answers.
 
-An OpenAI SDK powered customer support agent application that delivers voice-powered responses to questions about your knowledge base using OpenAI's GPT-4o and TTS capabilities. The system crawls through documentation websites with Firecrawl, processes the content into a searchable knowledge base with Qdrant, and provides both text and voice responses to user queries.
+## 🌟 Features
 
-## Features
+- **Dynamic Crawling**: Powered by Firecrawl to scrape and index documentation URLs in real-time.
+- **Voice Narration**: High-quality text-to-speech using OpenAI's latest models.
+- **RAG Architecture**: Efficient retrieval-augmented generation using Qdrant vector database.
+- **Modular Design**: Clean separation between crawling, agents, and UI logic.
+- **Transcript Export**: Download your entire session as a JSON file.
+- **Advanced Controls**: Customizable crawl limits and adjustable voice speed.
 
-- Knowledge Base Creation
+## 🏗️ Architecture
 
-  - Crawls documentation websites using Firecrawl
-  - Stores and indexes content using Qdrant vector database
-  - Generates embeddings for semantic search capabilities using FastEmbed
-- **AI Agent Team**
-  - **Documentation Processor**: Analyzes documentation content and generates clear, concise responses to user queries
-  - **TTS Agent**: Converts text responses into natural-sounding speech with appropriate pacing and emphasis
-  - **Voice Customization**: Supports multiple OpenAI TTS voices:
-    - alloy, ash, ballad, coral, echo, fable, onyx, nova, sage, shimmer, verse
+```mermaid
+graph TD
+    User([User]) --> UI[Streamlit App]
+    UI --> Crawl[Firecrawl Engine]
+    Crawl --> Qdrant[(Qdrant Vector DB)]
+    UI --> Search[Retrieval Engine]
+    Search --> Qdrant
+    Qdrant --> Context[Context Snippets]
+    Context --> Processor[OpenAI Processor Agent]
+    Processor --> TextRes[Text Answer]
+    TextRes --> TTSAgent[TTS Agent]
+    TTSAgent --> OpenAI_TTS[OpenAI TTS API]
+    OpenAI_TTS --> Audio[Voice Output]
+```
 
-- **Interactive Interface**
-  - Clean Streamlit UI with sidebar configuration
-  - Real-time documentation search and response generation
-  - Built-in audio player with download capability
-  - Progress indicators for system initialization and query processing
+## 🛠️ Quick Start
 
-## How to Run
+1. **Clone & Install**:
 
-1. **Setup Environment**
    ```bash
-   # Clone the repository
-   git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-   cd awesome-llm-apps/ai_agent_tutorials/ai_voice_agent_openaisdk
-   
-   # Install dependencies
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd voice_ai_agents/customer_support_voice_agent
    pip install -r requirements.txt
    ```
 
-2. **Configure API Keys**
-   - Get OpenAI API key from [OpenAI Platform](https://platform.openai.com)
-   - Get Qdrant API key and URL from [Qdrant Cloud](https://cloud.qdrant.io)
-   - Get Firecrawl API key for documentation crawling
+2. **Setup Credentials**:
+   Copy `.env.example` to `.env` and enter your API keys.
 
-3. **Run the Application**
+3. **Launch the Agent**:
    ```bash
-   streamlit run ai_voice_agent_docs.py
+   streamlit run app.py
    ```
 
-4. **Use the Interface**
-   - Enter API credentials in the sidebar
-   - Input the documentation URL you want to learn about
-   - Select your preferred voice from the dropdown
-   - Click "Initialize System" to process the documentation
-   - Ask questions and receive both text and voice responses
+## 📦 Project Structure
 
-## Features in Detail
+- `app.py`: Streamlit entry point and UI orchestrator.
+- `crawler_engine.py`: Core logic for scraping and vector storage.
+- `agents_config.py`: OpenAI Agents definitions.
+- `utils.py`: Shared logging and helper functions.
 
-- **Knowledge Base Creation**
-  - Builds a searchable knowledge base from your documentation
-  - Preserves document structure and metadata
-  - Supports multiple page crawling (limited to 5 pages per default configuration)
+## 🚀 Recent Improvements
 
-- **Vector Search**
-  - Uses FastEmbed for generating embeddings
-  - Semantic search capabilities for finding relevant content
-  - Efficient document retrieval using Qdrant
-
-- **Voice Generation**
-  - High-quality text-to-speech using OpenAI's TTS models
-  - Multiple voice options for customization
-  - Natural speech patterns with proper pacing and emphasis
+This project has been enhanced with 20 professional contributions including full modularization, UI overhaul, and advanced session management.
