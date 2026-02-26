@@ -27,11 +27,12 @@ class VectorDBError(CrawlerException):
 
 # Constants
 DEFAULT_COLLECTION = "docs_embeddings"
+class CrawlerRAGEngine:
     """
     Engine to handle documentation crawling via Firecrawl and 
     Vector Database operations using Qdrant.
     """
-    def __init__(self, qdrant_url: str, qdrant_api_key: str, collection_name: str = "docs_embeddings"):
+    def __init__(self, qdrant_url: str, qdrant_api_key: str, collection_name: str = DEFAULT_COLLECTION):
         self.client = QdrantClient(url=qdrant_url, api_key=qdrant_api_key)
         self.embedding_model = TextEmbedding()
         self.collection_name = collection_name
