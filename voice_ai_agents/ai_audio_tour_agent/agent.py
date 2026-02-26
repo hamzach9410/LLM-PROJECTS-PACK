@@ -20,7 +20,9 @@ Help users see and appreciate architectural details they might otherwise miss. M
 """)
 
 class Architecture(BaseModel):
+    """Data model for the Architecture specialist agent's response."""
     output: str
+    """The detailed architectural narration."""
 
 architecture_agent = Agent(
     name="ArchitectureAgent",
@@ -49,7 +51,9 @@ Make your descriptions vivid and appetizing. Include practical information like 
 """)
 
 class Culinary(BaseModel):
+    """Data model for the Culinary specialist agent's response."""
     output: str
+    """The detailed culinary narration."""
 
 
 culinary_agent = Agent(
@@ -79,7 +83,9 @@ Focus on authentic cultural insights that help users appreciate local ways of li
 """)
 
 class Culture(BaseModel):
+    """Data model for the Culture specialist agent's response."""
     output: str
+    """The detailed cultural narration."""
 
 culture_agent = Agent(
     name="CulturalAgent",
