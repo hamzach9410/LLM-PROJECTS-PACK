@@ -1,72 +1,66 @@
-# 🎧 Self-Guided AI Audio Tour Agent
+# 🎧 AI Audio Tour Agent with OpenAI Agents SDK
 
-### 🎓 FREE Step-by-Step Tutorial 
-**👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-a-self-guided-ai-audio-tour-agent) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
+A professional-grade, multi-agent audio tour guide that researches any location and generates a high-quality, narrated tour tailored to your specific interests and time constraints.
 
-A conversational voice agent system that generates immersive, self-guided audio tours based on the user’s **location**, **areas of interest**, and **tour duration**. Built on a multi-agent architecture using OpenAI Agents SDK, real-time information retrieval, and expressive TTS for natural speech output.
+## 🌟 Features
 
----
+- **Personalized Research**: Powered by specialized agents for Architecture, History, Culinary, and Culture.
+- **Dynamic Orchestration**: Automatically allocates time based on your interests and selected tour duration.
+- **Narrated Experience**: Generates natural, engaging audio using OpenAI TTS with voice style and speed controls.
+- **Interactive Map Links**: Instantly jump from your tour to Google Maps for navigation.
+- **Session Persistence**: Keeps track of your generated tours during a session.
+- **Modular Design**: Clean, maintainable structure with specialized engines and utilities.
 
-## 🚀 Features
+## 🏗️ Architecture
 
-### 🎙️ Multi-Agent Architecture
-
-- **Orchestrator Agent**  
-  Coordinates the overall tour flow, manages transitions, and assembles content from all expert agents.
-
-- **History Agent**  
-  Delivers insightful historical narratives with an authoritative voice.
-
-- **Architecture Agent**  
-  Highlights architectural details, styles, and design elements using a descriptive and technical tone.
-
-- **Culture Agent**  
-  Explores local customs, traditions, and artistic heritage with an enthusiastic voice.
-
-- **Culinary Agent**  
-  Describes iconic dishes and food culture in a passionate and engaging tone.
-
----
-
-### 📍 Location-Aware Content Generation
-
-- Dynamic content generation based on user-input **location**
-- Real-time **web search integration** to fetch relevant, up-to-date details
-- Personalized content delivery filtered by user **interest categories**
-
----
-
-### ⏱️ Customizable Tour Duration
-
-- Selectable tour length: **15, 30, or 60 minutes**
-- Time allocations adapt to user interest weights and location relevance
-- Ensures well-paced and proportioned narratives across sections
-
----
-
-### 🔊 Expressive Speech Output
-
-- High-quality audio generated using **Gpt-4o Mini Audio**
-
-### How to get Started?
-
-1. Clone the GitHub repository
-
-```bash
-git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-cd ai_agent_tutorials/ai_audio_tour_agent
-```
-2. Install the required dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-3. Get your OpenAI API Key
-
-- Sign up for an [OpenAI account](https://platform.openai.com/) (or the LLM provider of your choice) and obtain your API key.
-
-4. Run the Streamlit App
-```bash
-streamlit run ai_audio_tour_agent.py
+```mermaid
+graph TD
+    User([User]) --> UI[Streamlit App]
+    UI --> Planner[Planner Agent]
+    Planner --> Alloc[Time Allocation JSON]
+    Alloc --> Manager[Tour Manager]
+    Manager --> Arch[Architecture Agent]
+    Manager --> Hist[History Agent]
+    Manager --> Cul[Culinary Agent]
+    Manager --> Cult[Culture Agent]
+    Arch & Hist & Cul & Cult --> Search[Web Search Tool]
+    Arch & Hist & Cul & Cult --> Orch[Orchestrator Agent]
+    Orch --> Final[Final Tour Transcript]
+    Final --> TTS[TTS Engine]
+    TTS --> OpenAI_TTS[OpenAI TTS API]
+    OpenAI_TTS --> Audio[Voice Guide]
 ```
 
+## 🛠️ Quick Start
+
+1. **Clone & Install**:
+
+   ```bash
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd voice_ai_agents/ai_audio_tour_agent
+   pip install -r requirements.txt
+   ```
+
+2. **Configure API Keys**:
+   Create a `.env` file from the provided `.env.example` template:
+
+   ```env
+   OPENAI_API_KEY=your_key_here
+   ```
+
+3. **Run the App**:
+   ```bash
+   streamlit run app.py
+   ```
+
+## 📦 Project Structure
+
+- `app.py`: Streamlit frontend and UI logic.
+- `manager.py`: Core orchestration logic for the multi-agent system.
+- `agent.py`: Definitions for specialist and orchestrator agents.
+- `utils.py`: TTS narration engine and logging helpers.
+- `config.py`: Centralized configuration and constants.
+
+## 🚀 20 Contributions
+
+This project has been upgraded with 20 professional contributions including full modularization, enhanced UI controls, error resilience, and interactive features.
