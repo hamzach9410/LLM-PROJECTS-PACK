@@ -1,79 +1,67 @@
-## 🎙️ Voice RAG with OpenAI SDK
+# 🎙️ Voice RAG Agent with OpenAI Agents SDK
 
-Developed by **Ali Hamza** ([LinkedIn](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/) | [Email](mailto:ihamzaali06@gmail.com))
+A professional, modular, and feature-rich Voice-powered RAG (Retrieval-Augmented Generation) application. Ask questions about your PDF documents and receive intelligent text answers with natural voice narration.
 
-### 🎓 FREE Step-by-Step Tutorial
+## 🚀 Features
 
-**👉 [Click here to follow the complete step-by-step tutorial](https://www.theunwindai.com/p/build-a-voice-rag-agent) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
+- **Voice-First Interaction**: Natural speech responses using OpenAI's latest TTS models.
+- **Multi-Document Support**: Upload and process multiple PDF files simultaneously.
+- **Intelligent RAG**: Powered by Qdrant vector database and FastEmbed for high-performance retrieval.
+- **Modular Architecture**: Cleanly separated logic for RAG engine, agents, and UI.
+- **Conversation History**: Keep track of your session's Q&A.
+- **Real-time Playback**: Streamed audio responses for low-latency feedback.
 
-This script demonstrates how to build a voice-enabled Retrieval-Augmented Generation (RAG) system using OpenAI's SDK and Streamlit. The application allows users to upload PDF documents, ask questions, and receive both text and voice responses using OpenAI's text-to-speech capabilities.
+## 🏗️ Architecture
 
-### Features
-
-- Creates a voice-enabled RAG system using OpenAI's SDK
-- Supports PDF document processing and chunking
-- Uses Qdrant as the vector database for efficient similarity search
-- Implements real-time text-to-speech with multiple voice options
-- Provides a user-friendly Streamlit interface
-- Allows downloading of generated audio responses
-- Supports multiple document uploads and tracking
-
-### How to get Started?
-
-1. Clone the GitHub repository
-
-```bash
-git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
-cd LLM-PROJECTS-PACK/voice_ai_agents/voice_rag_openaisdk
+```mermaid
+graph TD
+    User([User]) --> UI[Streamlit App]
+    UI --> PDF[PDF Processor]
+    PDF --> Qdrant[(Qdrant Vector DB)]
+    UI --> Query[Query Handler]
+    Query --> Qdrant
+    Qdrant --> Context[Retrieved Context]
+    Context --> ProcessorAgent[Documentation Processor Agent]
+    ProcessorAgent --> TextResponse[Text Answer]
+    TextResponse --> TTSAgent[TTS Agent]
+    TTSAgent --> VoiceInstructions[Voice Control Instructions]
+    TextResponse & VoiceInstructions --> OpenAITTS[OpenAI TTS API]
+    OpenAITTS --> Audio[Audio Player]
 ```
 
-2. Install the required dependencies:
+## 🛠️ Setup
 
-```bash
-pip install -r requirements.txt
-```
+1. **Clone the repository**:
 
-3. Set up your API keys:
+   ```bash
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd voice_ai_agents/voice_rag_openaisdk
+   ```
 
-- Get your [OpenAI API key](https://platform.openai.com/)
-- Set up a [Qdrant Cloud](https://cloud.qdrant.io/) account and get your API key and URL
-- Create a `.env` file with your credentials:
+2. **Install dependencies**:
 
-```bash
-OPENAI_API_KEY='your-openai-api-key'
-QDRANT_URL='your-qdrant-url'
-QDRANT_API_KEY='your-qdrant-api-key'
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-4. Run the Voice RAG application:
+3. **Configure Environment Variables**:
+   Copy `.env.example` to `.env` and fill in your keys:
+   - `OPENAI_API_KEY`
+   - `QDRANT_URL`
+   - `QDRANT_API_KEY`
 
-```bash
-streamlit run rag_voice.py
-```
+4. **Run the application**:
+   ```bash
+   streamlit run app.py
+   ```
 
-5. Open your web browser and navigate to the URL provided in the console output to interact with the Voice RAG system.
+## 📦 Project Structure
 
-### How it works?
+- `app.py`: Streamlit entry point and UI logic.
+- `rag_engine.py`: Handle vector database operations and embeddings.
+- `agents_config.py`: OpenAI Agents definitions and instructions.
+- `utils.py`: PDF processing and helper utilities.
 
-1. **Document Processing:**
-   - Upload PDF documents through the Streamlit interface
-   - Documents are split into chunks using LangChain's RecursiveCharacterTextSplitter
-   - Each chunk is embedded using FastEmbed and stored in Qdrant
+## 🤝 Contribution
 
-2. **Query Processing:**
-   - User questions are converted to embeddings
-   - Similar documents are retrieved from Qdrant
-   - A processing agent generates a clear, spoken-word friendly response
-   - A TTS agent optimizes the response for speech synthesis
-
-3. **Voice Generation:**
-   - Text responses are converted to speech using OpenAI's TTS
-   - Users can choose from multiple voice options
-   - Audio can be played directly or downloaded as MP3
-
-4. **Features:**
-   - Real-time audio streaming
-   - Multiple voice personality options
-   - Document source tracking
-   - Download capability for audio responses
-   - Progress tracking for document processing
+This project was enhanced with 20 key contributions including modular refactoring, multi-file support, and advanced UI features.

@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+ENV/
+env/
+
+# Streamlit
+.streamlit/
+
+# Temporary files
+*.mp3
+*.wav
+tmp/
+
+# OS
+.DS_Store
+Thumbs.db
