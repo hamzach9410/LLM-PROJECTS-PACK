@@ -1,94 +1,60 @@
-# 👨‍🏫 AI Teaching Agent Team
+# 👨‍🏫 AI Teaching Agent Team with Agno & Composio
 
-Developed by **Ali Hamza** | AI/ML/DL Engineer
+A sophisticated multi-agent learning platform that researches any topic, designs a roadmap, curates resources, and creates practice materials—all automatically stored in Google Docs.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ali%20Hamza-blue?logo=linkedin)](https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
-[![Email](https://img.shields.io/badge/Email-ihamzaali06%40gmail.com-red?logo=gmail)](mailto:ihamzaali06@gmail.com)
+## 🌟 Features
 
----
+- **Expert Team**: Specialized agents for Research (Professor), Learning Paths (Advisor), Resources (Librarian), and Practice (TA).
+- **Google Docs Integration**: Powered by Composio to generate structured study materials directly in your cloud storage.
+- **Academic Depth**: Integrated with Arxiv for the latest research papers and SerpApi for real-world resources.
+- **Interactive UI**: Modern Streamlit interface with topic history, progress tracking, and direct document link cards.
+- **Modular Architecture**: Clean separation of agent configurations, storage engines, and UI logic.
 
-### 🎓 FREE Step-by-Step Tutorial
+## 🏗️ Architecture
 
-**👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-an-ai-teaching-agent-team) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
+```mermaid
+graph TD
+    User([User]) --> UI[Streamlit App]
+    UI --> Storage[Storage Engine]
+    Storage --> Composio[Composio ToolSet]
+    Composio --> GDocs[(Google Docs)]
 
-A Streamlit application that brings together a team of specialized AI teaching agents who collaborate like a professional teaching faculty. Each agent acts as a specialized educator: a curriculum designer, learning path expert, resource librarian, and practice instructor - working together to create a complete educational experience through Google Docs.
+    UI --> Prof[Professor Agent]
+    Prof --> GDocs
 
-## 🪄 Meet your AI Teaching Agent Team
+    UI --> Advisor[Academic Advisor]
+    Advisor --> GDocs
 
-#### 🧠 Professor Agent
+    UI --> Librarian[Research Librarian]
+    Librarian --> Serp[SerpApi]
+    Librarian --> Arxiv[Arxiv]
+    Librarian --> GDocs
 
-- Creates fundamental knowledge base in Google Docs
-- Organizes content with proper headings and sections
-- Includes detailed explanations and examples
-- Output: Comprehensive knowledge base document with table of contents
-
-#### 🗺️ Academic Advisor Agent
-
-- Designs learning path in a structured Google Doc
-- Creates progressive milestone markers
-- Includes time estimates and prerequisites
-- Output: Visual roadmap document with clear progression paths
-
-#### 📚 Research Librarian Agent
-
-- Compiles resources in an organized Google Doc
-- Includes links to academic papers and tutorials
-- Adds descriptions and difficulty levels
-- Output: Categorized resource list with quality ratings
-
-#### ✍️ Teaching Assistant Agent
-
-- Develops exercises in an interactive Google Doc
-- Creates structured practice sections
-- Includes solution guides
-- Output: Complete practice workbook with answers
-
-## How to Run
-
-1. Clone the repository
-
-```bash
- # Clone the repository
- git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
- cd starter_ai_agents/ai_personal_learning_agent
-
- # Install dependencies
- pip install -r requirements.txt
+    UI --> TA[Teaching Assistant]
+    TA --> GDocs
 ```
 
-## Configuration - IMPORTANT STEP
+## 🛠️ Quick Start
 
-1. Get your OpenAI API Key
+1. **Clone & Install**:
 
-- Create an account on [OpenAI Platform](https://platform.openai.com/)
-- Navigate to API Keys section
-- Create a new API key
+   ```bash
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd advanced_ai_agents/multi_agent_apps/agent_teams/ai_teaching_agent_team
+   pip install -r requirements.txt
+   ```
 
-2. Get your Composio API Key
+2. **Configure API Keys**:
+   Create a `.env` file or use the sidebar in the app for:
+   - `OPENAI_API_KEY`
+   - `COMPOSIO_API_KEY`
+   - `SERPAPI_API_KEY`
 
-- Create an account on [Composio Platform](https://composio.ai/)
-- **IMPORTANT** - For you to use the app, you need to make new connection ID with google docs and composio.Follow the below two steps to do so:
-  - composio add googledocs (IN THE TERMINAL)
-  - Create a new connection
-  - Select OAUTH2
-  - Select Google Account and Done.
-  - On the composio account website, go to apps, select google docs tool, and [click create integration](https://app.composio.dev/app/googledocs) (violet button) and click Try connecting default’s googldocs button and we are done.
+3. **Run the App**:
+   ```bash
+   streamlit run app.py
+   ```
 
-3. Sign up and get the [SerpAPI Key](https://serpapi.com/)
+## 🚀 20 Contributions
 
-## How to Use?
-
-1. Start the Streamlit app
-
-```bash
-streamlit run teaching_agent_team.py
-```
-
-2. Use the application
-
-- Enter your OpenAI API key in the sidebar (if not set in environment)
-- Enter your Composio API key in the sidebar
-- Type a topic you want to learn about (e.g., "Python Programming", "Machine Learning")
-- Click "Generate Learning Plan"
-- Wait for the agents to generate your personalized learning plan
-- View the results and terminal output in the interface
+This project has been transformed with 20 professional contributions including full modularization, enhanced Agent instructions, Arxiv integration, and a major UI/UX overhaul.
