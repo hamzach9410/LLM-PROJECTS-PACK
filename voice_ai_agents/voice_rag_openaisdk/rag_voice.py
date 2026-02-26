@@ -1,3 +1,6 @@
+# Developed by: Ali Hamza (https://www.linkedin.com/in/ali-hamza-ai-ml-dl-engineer/)
+# Email: ihamzaali06@gmail.com
+
 from typing import List, Dict, Optional, Tuple
 import os
 import tempfile
