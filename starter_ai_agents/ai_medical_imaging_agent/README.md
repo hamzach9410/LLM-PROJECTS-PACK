@@ -1,66 +1,67 @@
-# 🩻 Medical Imaging Diagnosis Agent
+# 🏥 Radiological Intelligence Platform
 
-A Medical Imaging Diagnosis Agent build on agno powered by Gemini 2.0 Flash that provides AI-assisted analysis of medical images of various scans. The agent acts as a medical imaging diagnosis expert to analyze various types of medical images and videos, providing detailed diagnostic insights and explanations.
+A professional-grade AI platform for multi-modal medical image analysis. Built with Agno and Google Gemini Vision, this platform provides autonomous radiological insights, research context, and structured diagnostic reporting.
 
-## Features
+## 🌟 Features
 
-- **Comprehensive Image Analysis**
-  - Image Type Identification (X-ray, MRI, CT scan, ultrasound)
-  - Anatomical Region Detection
-  - Key Findings and Observations
-  - Potential Abnormalities Detection
-  - Image Quality Assessment
-  - Research and Reference
+- **Multi-Modal Vision Analysis**: Specialized Gemini agents analyze X-rays, MRIs, CT scans, and Ultrasounds.
+- **Structured Diagnostic Reporting**: Automated reports covering Image Quality, Key Findings, Diagnostic Assessment, and Patient-Friendly Explanations.
+- **Embedded Medical Research**: Integrates DuckDuckGo tools to find recent literature and standard treatment protocols relevant to the findings.
+- **Interactive Diagnostic Hub**: Modern Streamlit interface with real-time pipeline status tracking.
+- **Analysis History**: Browse and revisit previous diagnostic reports within the session.
+- **Professional Exports**: One-click download of diagnostic reports in Markdown format.
+- **Modular Architecture**: Clean separation between agent personas, processing engines, and the presentation layer.
 
-## How to Run
+## 🏗️ Architecture
 
-1. **Setup Environment**
+```mermaid
+graph TD
+    User([User]) --> UI[Streamlit Diagnostic Hub]
+    UI --> Engine[Imaging Engine]
+    Engine --> Agent[Radiological Specialist]
+    Agent --> Gemini[(Google Gemini Vision)]
+    Agent --> Research[DuckDuckGo Research]
+    Gemini --> Findings[Visual Findings]
+    Findings --> Report[Final Diagnostic Report]
+    Report --> UI
+    UI --> History[Session History]
+    UI --> Export[MD Downloader]
+```
+
+## 🛠️ Quick Start
+
+1. **Clone & Install**:
+
    ```bash
-   # Clone the repository
-   git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-   cd ai_agent_tutorials/ai_medical_imaging_agent
-
-   # Install dependencies
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd starter_ai_agents/ai_medical_imaging_agent
    pip install -r requirements.txt
    ```
 
-2. **Configure API Keys**
-   - Get Google API key from [Google AI Studio](https://aistudio.google.com)
+2. **Configure API Key**:
+   Create a `.env` file or use the sidebar:
 
-3. **Run the Application**
-   ```bash
-   streamlit run ai_medical_imaging.py
+   ```env
+   GOOGLE_API_KEY=your_gemini_key
    ```
 
-## Analysis Components
+3. **Run the Platform**:
+   ```bash
+   streamlit run app.py
+   ```
 
-- **Image Type and Region**
-  - Identifies imaging modality
-  - Specifies anatomical region
+## 📦 Project Structure
 
-- **Key Findings**
-  - Systematic listing of observations
-  - Detailed appearance descriptions
-  - Abnormality highlighting
+- `app.py`: Main interactive diagnostic dashboard.
+- `agents_config.py`: Specialized radiological personas and diagnostic prompts.
+- `imaging_engine.py`: Orchestration logic for vision analysis and research.
+- `utils.py`: Shared logging and clinical image processing helpers.
 
-- **Diagnostic Assessment**
-  - Potential diagnoses ranking
-  - Differential diagnoses
-  - Severity assessment
+## 🚀 20 Contributions
 
-- **Patient-Friendly Explanations**
-  - Simplified terminology
-  - Detailed first-principles explanations
-  - Visual reference points
+This project has been transformed from a single script into a comprehensive radiological intelligence platform with 20 contributions focused on diagnostic logic, reporting efficiency, and modular scalability.
 
-## Notes
+---
 
-- Uses Gemini 2.0 Flash for analysis
-- Requires stable internet connection
-- Free API usage costs -  1,500 free requests per day by google!
-- For educational and development purposes only
-- Not a replacement for professional medical diagnosis
-
-## Disclaimer
-
-This tool is for educational and informational purposes only. All analyses should be reviewed by qualified healthcare professionals. Do not make medical decisions based solely on this analysis.
+> [!WARNING]
+> DISCLAIMS: This tool is for educational and informational purposes only. All analyses should be reviewed by qualified healthcare professionals.

@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+env/
+
+# Artifacts
+active_analysis.png
+temp_*.png
+
+# Streamlit
+.streamlit/
+
+# OS
+.DS_Store
+Thumbs.db
