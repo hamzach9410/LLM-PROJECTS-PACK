@@ -1,43 +1,62 @@
-## ModelsLab Music Generator
+# 🎶 AI Music Composition Studio
 
-This is a Streamlit-based application that allows users to generate music using the ModelsLab API and OpenAI's GPT-4 model. Users can input a prompt describing the type of music they want to generate, and the application will generate a music track in MP3 format based on the given prompt.
+A professional AI agent platform for generating high-fidelity instrumental music tracks. Built with Agno, OpenAI, and ModelsLab, this studio transforms text prompts into professional-grade audio compositions with a dedicated session history and persistence layer.
 
-## Features
+## 🌟 Features
 
-- **Generate Music**: Enter a detailed prompt for music generation (genre, instruments, mood, etc.), and the app will generate a music track.
-- **MP3 Output**: The generated music will be in MP3 format, available for listening or download.
-- **User-Friendly Interface**: Simple and clean Streamlit UI for ease of use.
-- **API Key Integration**: Requires both OpenAI and ModelsLab API keys to function. API keys are entered in the sidebar for authentication.
+- **Autonomous Composition**: Specialized agent ("Audio Maestro") that strategizes musical elements based on text prompts.
+- **High-Fidelity Audio**: Integration with ModelsLab API for professional-grade music generation.
+- **Interactive Studio Dashboard**: Modern Streamlit interface with real-time composition status tracking.
+- **Studio History persistence**: Browse, play, and download previous compositions within the current session.
+- **Local Audio Management**: Automatic downloading and organized storage of generated tracks in a dedicated folder.
+- **Professional Exports**: One-click download of master tracks in `.mp3` format.
+- **Modular Architecture**: Clean separation between agent definitions, music engine logic, and UI.
 
-## Setup
+## 🏗️ Architecture
 
-### Requirements 
+```mermaid
+graph TD
+    User([User]) --> UI[Streamlit Studio Hub]
+    UI --> Agent[Audio Maestro Agent]
+    Agent --> ML[ModelsLab API]
+    ML --> URL[Audio Artifact URL]
+    URL --> Engine[Music Engine]
+    Engine --> Local[Local .mp3 Storage]
+    Local --> UI
+    UI --> History[Studio History]
+    UI --> Player[Interactive Audio Player]
+```
 
-1. **API Keys**:
-   - **OpenAI API Key**: Sign up at [OpenAI](https://platform.openai.com/api-keys) to obtain your API key.
-   - **ModelsLab API Key**: Sign up at [ModelsLab](https://modelslab.com/dashboard/api-keys) to get your API key.
+## 🛠️ Quick Start
 
-2. **Python 3.8+**: Ensure you have Python 3.8 or higher installed.
+1. **Clone & Install**:
 
-### Installation
-1. Clone this repository:
    ```bash
-   git clone https://github.com/Shubhamsaboo/awesome-llm-apps
-   cd starter_ai_agents/ai_models_lab_music_generator_agent
-   ```
-
-2. Install the required Python packages:
-   ```bash
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd starter_ai_agents/ai_music_generator_agent
    pip install -r requirements.txt
    ```
-### Running the App
 
-1. Start the Streamlit app:
-   ```bash
-   streamlit run models_lab_music_generator_agent.py
+2. **Configure API Keys**:
+   Create a `.env` file or use the sidebar:
+
+   ```env
+   OPENAI_API_KEY=your_openai_key
+   MODELSLAB_API_KEY=your_modelslab_key
    ```
 
-2. In the app interface:
-   - Enter a music generation prompt
-   - Click "Generate Music"
-   - Play the music & Download it.
+3. **Run the Studio**:
+   ```bash
+   streamlit run app.py
+   ```
+
+## 📦 Project Structure
+
+- `app.py`: Main interactive composition dashboard.
+- `agents_config.py`: Specialized agent roles and musical composition instructions.
+- `music_engine.py`: Resilient audio downloading and local persistence logic.
+- `utils.py`: Shared logging and directory management helpers.
+
+## 🚀 20 Contributions
+
+This project has been transformed from a single script into a professional AI Music Studio with 20 contributions focused on composition intelligence, audio management, and modular architecture.
