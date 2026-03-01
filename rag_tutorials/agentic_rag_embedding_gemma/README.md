@@ -1,62 +1,59 @@
-## 🔥 Agentic RAG with EmbeddingGemma
+# 🔥 Agentic RAG Intelligence Lab (Gemma)
 
-### 🎓 FREE Step-by-Step Tutorial 
-**👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-a-local-agentic-rag-app-with-google-embeddinggemma) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
+A professional-grade local RAG platform. Built with Agno and Google's EmbeddingGemma, this platform enables high-precision document intelligence and semantic search, all running privately on your local machine via Ollama.
 
-This Streamlit app demonstrates an agentic Retrieval-Augmented Generation (RAG) Agent using Google's EmbeddingGemma for embeddings and Llama 3.2 as the language model, all running locally via Ollama.
+## 🌟 Features
 
-### Features
+- **100% Local Intelligence**: Uses EmbeddingGemma for vector embeddings and Llama 3.2 for reasoning.
+- **Agentic Knowledge Retrieval**: Specialized agents autonomously select the best context for answering queries.
+- **Dynamic Ingestion**: Add PDF URLs on the fly to expand your private knowledge base.
+- **High-Performance Vector Store**: Powered by LanceDB for efficient local similarity search.
+- **Premium UI**: Modern Streamlit interface with real-time indexing status and streaming responses.
 
-- **Local AI Models**: Uses EmbeddingGemma for vector embeddings and Llama 3.2 for text generation
-- **PDF Knowledge Base**: Dynamically add PDF URLs to build a knowledge base
-- **Vector Search**: Efficient similarity search using LanceDB
-- **Interactive UI**: Beautiful Streamlit interface for adding sources and querying
-- **Streaming Responses**: Real-time response generation with tool call visibility
+## 🏗️ Architecture
 
-### How to Get Started?
-
-1. Clone the GitHub repository
-```bash
-git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
-cd LLM-PROJECTS-PACK/rag_tutorials/agentic_rag_embedding_gemma
+```mermaid
+graph TD
+    User([User]) --> UI[Intelligence Lab UI]
+    UI --> Engine[RAG Engine]
+    Engine --> Agent[Agno Reasoning Agent]
+    Agent --> KB[Knowledge Base]
+    KB --> VectorStore[LanceDB]
+    KB --> Embedder[EmbeddingGemma]
+    Agent --> LLM[Llama 3.2]
+    UI --> Feedback[Streaming Response]
 ```
 
-2. Install the required dependencies:
-```bash
-pip install -r requirements.txt
-```
+## 🛠️ Quick Start
 
-3. Ensure Ollama is installed and running with the required models:
-   - Pull the models: `ollama pull embeddinggemma:latest` and `ollama pull llama3.2:latest`
-   - Start Ollama server if not running
+1. **Prerequisites**:
+   Install [Ollama](https://ollama.com/) and pull the models:
 
-4. Run the Streamlit app:
-```bash
-streamlit run agentic_rag_embeddinggemma.py
-```
-   (Note: The app file is in the root directory)
+   ```bash
+   ollama pull embeddinggemma:latest
+   ollama pull llama3.2:latest
+   ```
 
-5. Open your web browser to the URL provided (usually http://localhost:8501) to interact with the RAG agent.
+2. **Clone & Install**:
 
-### How It Works?
+   ```bash
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd rag_tutorials/agentic_rag_embedding_gemma
+   pip install -r requirements.txt
+   ```
 
-1. **Knowledge Base Setup**: Add PDF URLs in the sidebar to load and index documents.
-2. **Embedding Generation**: EmbeddingGemma creates vector embeddings for semantic search.
-3. **Query Processing**: User queries are embedded and searched against the knowledge base.
-4. **Response Generation**: Llama 3.2 generates answers based on retrieved context.
-5. **Tool Integration**: The agent uses search tools to fetch relevant information.
+3. **Run the Lab**:
+   ```bash
+   streamlit run app.py
+   ```
 
-### Requirements
+## 📦 Project Structure
 
-- Python 3.8+
-- Ollama installed and running
-- Required models: `embeddinggemma:latest`, `llama3.2:latest`
+- `app.py`: Main interactive intelligence dashboard.
+- `agents_config.py`: Configuration for Knowledge Base and Reasoning Agents.
+- `rag_engine.py`: Core logic for document ingestion and agentic querying.
+- `utils.py`: UI styling and session management.
 
-### Technologies Used
+## 🚀 Professional Modernization
 
-- **Agno**: Framework for building AI agents
-- **Streamlit**: Web app framework
-- **LanceDB**: Vector database
-- **Ollama**: Local LLM server
-- **EmbeddingGemma**: Google's embedding model
-- **Llama 3.2**: Meta's language model
+This project has been transformed from a single-script tutorial into a comprehensive local intelligence platform with a focus on modularity, high-fidelity embeddings, and private-first data processing.

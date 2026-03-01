@@ -1,64 +1,58 @@
-# RAG Agent with Cohere ⌘R 
+# ⌘ Cohere Strategic Intelligence Lab
 
-A RAG Agentic system built with Cohere's new model Command-r7b-12-2024, Qdrant for vector storage, Langchain for RAG and LangGraph for orchestration. This application allows users to upload documents, ask questions about them, and get AI-powered responses with fallback to web search when needed.
+A high-performance agentic RAG platform built with Cohere's latest models and Qdrant vector storage. This platform seamlessly integrates local document research with a LangGraph-powered web search fallback, ensuring comprehensive analysis across private and public data.
 
-## Features
+## 🌟 Features
 
-- **Document Processing**
-  - PDF document upload and processing
-  - Automatic text chunking and embedding
-  - Vector storage in Qdrant cloud
+- **Command ⌘R+ Integration**: Powered by Cohere's Command R+ for state-of-the-art agentic reasoning and synthesis.
+- **Hybrid Knowledge Flow**: Prioritizes local vector-stored documents; falls back to an autonomous web research agent if needed.
+- **Qdrant Vector Cluster**: Industrial-grade vector storage for high-fidelity, scaleable document retrieval.
+- **Agentic Fallback**: Uses LangGraph to orchestrate a web research agent when internal documentation is insufficient.
+- **Premium Intelligence UI**: Clean, professional Streamlit interface for seamless document analysis and research.
 
-- **Intelligent Querying**
-  - RAG-based document retrieval
-  - Similarity search with threshold filtering
-  - Automatic fallback to web search when no relevant documents found
-  - Source attribution for answers
+## 🏗️ Architecture
 
-- **Advanced Capabilities**
-  - DuckDuckGo web search integration
-  - LangGraph agent for web research
-  - Context-aware response generation
-  - Long answer summarization
-
-- **Model Specific Features**
-  - Command-r7b-12-2024 model for Chat and RAG
-  - cohere embed-english-v3.0 model for embeddings
-  - create_react_agent function from langgraph 
-  - DuckDuckGoSearchRun tool for web search
-
-## Prerequisites
-
-### 1. Cohere API Key
-1. Go to [Cohere Platform](https://dashboard.cohere.ai/api-keys)
-2. Sign up or log in to your account
-3. Navigate to API Keys section
-4. Create a new API key
-
-### 2. Qdrant Cloud Setup
-1. Visit [Qdrant Cloud](https://cloud.qdrant.io/)
-2. Create an account or sign in
-3. Create a new cluster
-4. Get your credentials:
-   - Qdrant API Key: Found in API Keys section
-   - Qdrant URL: Your cluster URL (format: `https://xxx-xxx.aws.cloud.qdrant.io`)
-
-
-## How to Run
-
-1. Clone the repository:
-```bash
-git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
-cd rag_tutorials/rag_agent_cohere
+```mermaid
+graph TD
+    User([User]) --> UI[Intelligence Lab UI]
+    UI --> Engine[Strategic RAG Engine]
+    Engine --> VectorCheck[Local Qdrant Check]
+    VectorCheck -- Found --> Agent[Command R+ Reasoning]
+    VectorCheck -- Missing --> WebAgent[LangGraph Search Agent]
+    WebAgent --> Agent
+    Agent --> UI
+    UI --> Sources[Cited Local Fragments]
 ```
 
-2. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+## 🛠️ Quick Start
 
-```bash
-streamlit run rag_agent_cohere.py
-```
+1. **API Infrastructure**:
+   Obtain API keys from [Cohere](https://cohere.com/) and [Qdrant Cloud](https://cloud.qdrant.io/).
 
+2. **Clone & Install**:
 
+   ```bash
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd rag_tutorials/rag_agent_cohere
+   pip install -r requirements.txt
+   ```
+
+3. **Configure Settings**:
+   Provide your Cohere and Qdrant credentials in the app sidebar.
+
+4. **Run the Lab**:
+   ```bash
+   streamlit run app.py
+   ```
+
+## 📦 Project Structure
+
+- `app.py`: Main interactive research and orchestration dashboard.
+- `rag_engine.py`: Core logic for prioritized retrieval and agentic fallback execution.
+- `agents_config.py`: Configuration for Cohere models and LangGraph research agents.
+- `vector_store.py`: Qdrant cluster management and vector store initialization.
+- `utils.py`: UI research aesthetics and session management.
+
+## 🚀 Professional Modernization
+
+This project has been transformed from a single-script tutorial into a robust strategic research hub. It focuses on the power of agentic RAG to navigate complex documentation and public web data, providing a high-fidelity intelligence platform for industrial-grade research.

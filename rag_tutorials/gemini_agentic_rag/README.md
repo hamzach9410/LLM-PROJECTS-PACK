@@ -1,90 +1,59 @@
-# 🤔 Agentic RAG with Gemini Flash Thinking
+# 🤔 Gemini Agentic RAG Lab
 
-A RAG Agentic system built with the new Gemini 2.0 Flash Thinking model and gemini-exp-1206, Qdrant for vector storage, and Agno (phidata prev) for agent orchestration. This application features intelligent query rewriting, document processing, and web search fallback capabilities to provide comprehensive AI-powered responses.
+A professional-grade RAG platform driven by Google's Gemini 2.0 Flash Thinking. This platform utilizes a multi-agent orchestration strategy to rewrite queries, autonomously retrieve documents, and synthesize reasoning-rich answers.
 
-## Features
+## 🌟 Features
 
-- **Document Processing**
-  - PDF document upload and processing
-  - Web page content extraction
-  - Automatic text chunking and embedding
-  - Vector storage in Qdrant cloud
+- **Multi-Agent Orchestration**: Specialized agents for query reformulation, web search, and final RAG synthesis.
+- **Gemini 2.0 Flash Thinking**: Leverages the latest experimental reasoning models for deep contextual analysis.
+- **Dynamic Retrieval Fallback**: Inclusively searches local Qdrant vector storage and global Exa web results.
+- **High-Fidelity Embedding**: Uses `text-embedding-004` for superior semantic accuracy.
+- **Advanced Ingestion**: Seamless processing of PDF documents and web URLs into high-performance vector collections.
+- **Diagnostic UI**: Modern Streamlit interface with real-time status updates and query transformation insights.
 
-- **Intelligent Querying**
-  - Query rewriting for better retrieval
-  - RAG-based document retrieval
-  - Similarity search with threshold filtering
-  - Automatic fallback to web search
-  - Source attribution for answers
+## 🏗️ Architecture
 
-- **Advanced Capabilities**
-  - Exa AI web search integration
-  - Custom domain filtering for web search
-  - Context-aware response generation
-  - Chat history management
-  - Query reformulation agent
-
-- **Model Specific Features**
-  - Gemini Thinking 2.0 Flash for chat and reasoning
-  - Gemini Embedding model for vector embeddings
-  - Agno Agent framework for orchestration
-  - Streamlit-based interactive interface
-
-## Prerequisites
-
-### 1. Google API Key
-1. Go to [Google AI Studio](https://aistudio.google.com/apikey)
-2. Sign up or log in to your account
-3. Create a new API key
-
-### 2. Qdrant Cloud Setup
-1. Visit [Qdrant Cloud](https://cloud.qdrant.io/)
-2. Create an account or sign in
-3. Create a new cluster
-4. Get your credentials:
-   - Qdrant API Key: Found in API Keys section
-   - Qdrant URL: Your cluster URL (format: `https://xxx-xxx.cloud.qdrant.io`)
-
-### 3. Exa AI API Key (Optional)
-1. Visit [Exa AI](https://exa.ai)
-2. Sign up for an account
-3. Generate an API key for web search capabilities
-
-## How to Run
-
-1. Clone the repository:
-```bash
-git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
-cd rag_tutorials/gemini_agentic_rag
+```mermaid
+graph TD
+    User([User]) --> UI[Agentic Lab UI]
+    UI --> Engine[Orchestration Engine]
+    Engine --> Rewriter[Gemini Query Rewriter]
+    Rewriter --> Engine
+    Engine --> Agent[Gemini Thinking Agent]
+    Agent --> KB[Knowledge Base]
+    KB --> VectorStore[Qdrant]
+    KB --> Embedder[Gemini-004 Embedder]
+    Agent --> Web[Exa Search Agent]
+    Agent --> LLM[Gemini 2.0 Flash Thinking]
+    UI --> Feedback[Final Answer + Agent Logs]
 ```
 
-2. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+## 🛠️ Quick Start
 
-3. Run the application:
-```bash
-streamlit run agentic_rag_gemini.py
-```
+1. **Clone & Install**:
 
-## Usage
+   ```bash
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd rag_tutorials/gemini_agentic_rag
+   pip install -r requirements.txt
+   ```
 
-1. Configure API keys in the sidebar:
-   - Enter your Google API key
-   - Add Qdrant credentials
-   - (Optional) Add Exa AI key for web search
+2. **Configure Credentials**:
+   Enter your Google, Qdrant, and Exa (optional) API keys in the app sidebar.
 
-2. Upload documents:
-   - Use the file uploader for PDFs
-   - Enter URLs for web content
+3. **Run the Lab**:
+   ```bash
+   streamlit run app.py
+   ```
 
-3. Ask questions:
-   - Type your query in the chat interface
-   - View rewritten queries and sources
-   - See web search results when relevant
+## 📦 Project Structure
 
-4. Manage your session:
-   - Clear chat history as needed
-   - Configure web search domains
-   - Monitor processed documents
+- `app.py`: Main interactive orchestration and research dashboard.
+- `agents_config.py`: Definitions for the suite of specialized Gemini agents.
+- `rag_engine.py`: Core logic for multi-modal ingestion and agentic RAG flows.
+- `vector_store.py`: Qdrant client and Gemini-native embedding logic.
+- `utils.py`: UI styling and session management.
+
+## 🚀 Professional Modernization
+
+This project has been transformed from a single-script tutorial into a robust autonomous intelligence hub. It focuses on multi-agent collaboration, high-fidelity reasoning, and the seamless integration of diverse knowledge sources.

@@ -1,59 +1,60 @@
-# 🧠 Math Tutor Agent – Agentic RAG with Feedback Loop
+# 🧮 Global Math Intelligence & Research Lab
 
-This project implements an **Agentic-RAG architecture** to simulate a math professor that solves **JEE-level math questions** with step-by-step explanations. The system smartly routes queries between a vector database and web search, applies input/output guardrails, and incorporates human feedback for continuous learning.
+A high-performance agentic RAG platform engineered for advanced mathematical reasoning and strategic proof synthesis. This system specializes in solving JEE-level competitive mathematics using a robust multi-agent architecture with autonomous routing, DSPy-powered guardrails, and human-in-the-loop refinement.
 
-## 📌 Features
+## 🌟 Features
 
-- ✅ **Input Guardrails** (DSPy): Accepts only academic math questions.
-- 📚 **Knowledge Base Search**: Uses **Qdrant Vector DB** with OpenAI Embeddings to match known questions.
-- 🌐 **Web Fallback**: Integrates **Tavily API** when no good match is found.
-- ✍️ **GPT-4.1 Explanations**: Generates step-by-step math solutions.
-- 🛡️ **Output Guardrails**: Filters for correctness and safety.
-- 👍 **Human-in-the-Loop Feedback**: Users rate answers (Yes/No), logged for future learning.
-- 📊 **Benchmarking**: Evaluated on **JEEBench** dataset with adjustable question limits.
-- 💻 **Streamlit UI**: Interactive dashboard with multiple tabs.
+- **Agentic Proof Synthesis**: Generates rigorous, step-by-step mathematical solutions using GPT-4o-level reasoning.
+- **Autonomous Knowledge Routing**: Intelligently switches between a specialized Qdrant vector vault (JEEBench) and Tavily web research.
+- **DSPy Guardrails**: Implements strict input/output validation to ensure mathematical accuracy and academic relevance.
+- **Human-in-the-Loop Feedback**: Integrated feedback loop for recording user ratings and refining reasoning pathways.
+- **Performance Benchmarking**: Built-in audit tools to evaluate accuracy against the standardized JEEBench dataset.
+- **Premium Research UI**: Sophisticated multi-tab Streamlit dashboard for research orchestration and data visualization.
 
-## 🚀 Architecture Flow
-<img width="465" alt="Screenshot 2025-05-04 at 3 45 58 PM" src="https://github.com/user-attachments/assets/c0a9e612-2ef0-413c-b779-c99fe9f48619" />
+## 🏗️ Architecture
 
+```mermaid
+graph TD
+    User([Researcher]) --> UI[Intelligence Lab UI]
+    UI --> InputGuard[DSPy Input Validation]
+    InputGuard --> Router[Autonomous Query Router]
+    Router --> Vault[Qdrant Local Vector Vault]
+    Router --> Web[Tavily Research Agent]
+    Vault --> Gen[Reasoning Agent]
+    Web --> Gen
+    Gen --> OutputGuard[DSPy Correctness Audit]
+    OutputGuard --> UI
+    UI --> Feedback[Human Feedback Vault]
+```
 
-## 📚 Knowledge Base
+## 🛠️ Quick Start
 
-- **Dataset:** [JEEBench (HuggingFace)](https://huggingface.co/datasets/daman1209arora/jeebench)
-- **Vector DB:** Qdrant (with OpenAI Embeddings)
-- **Storage:** Built with `llama-index` to persist embeddings and perform top-1 similarity search
+1. **API Setup**:
+   Obtain API keys from [OpenAI](https://platform.openai.com/) and [Tavily](https://tavily.com/).
 
-## 🌐 Web Search
+2. **Clone & Install**:
 
-- Uses **Tavily API** for fallback search when the KB doesn't contain a good match
-- Fetched content is piped into **GPT-4o** for clean explanation
+   ```bash
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd rag_tutorials/agentic_rag_math_agent
+   pip install -r requirements.txt
+   ```
 
+3. **Initialize Lab**:
+   Configure your `.env` file with the required keys.
 
-## 🔐 Guardrails
+4. **Run the Lab**:
+   ```bash
+   streamlit run app.py
+   ```
 
-- **Input Guardrail (DSPy):** Accepts only math-related academic questions
-- **Output Guardrail (DSPy):** Blocks hallucinated or off-topic content
+## 📦 Project Structure
 
+- `app.py`: Main interactive research and orchestration dashboard.
+- `rag/`: Core logic for query routing, mathematical reasoning, and knowledge retrieval.
+- `app/`: Specialized modules for benchmarking and data loading.
+- `logs/`: Persisted intelligence fragments and user feedback logs.
 
-## 👨‍🏫 Human-in-the-Loop Feedback
+## 🚀 Professional Modernization
 
-- Streamlit UI allows students to give 👍 / 👎 after seeing the answer
-- Feedback is logged to a local JSON file for future improvement
-
-## 📊 Benchmarking
-
-- Evaluated on **50 random JEEBench Math Questions**
-- **Current Accuracy:** 66%
-- Benchmark results saved to: `benchmark/results.csv`
-
-
-## 🚀 Demo 
-
-To run the app with Streamlit:
-
-```bash
-streamlit run app/streamlit.py
-
-
-
-
+This project has been transformed from a foundation tutorial into a robust mathematical research lab. It focuses on the convergence of symbolic reasoning and retrieval-augmented generation to deliver a high-fidelity platform for technical education and analytical research.

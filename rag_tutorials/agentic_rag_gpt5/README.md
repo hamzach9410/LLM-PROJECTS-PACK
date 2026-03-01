@@ -1,110 +1,54 @@
-# 🧠 Agentic RAG with GPT-5
+# 🧠 GPT-5 Strategic Intelligence Lab
 
-### 🎓 FREE Step-by-Step Tutorial 
-**👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-agentic-rag-with-openai-gpt-5) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
+A high-performance agentic RAG platform designed for strategic document analysis. This platform utilizes the Agno framework and LanceDB to provide high-fidelity answers derived from curated knowledge sources.
 
-An agentic RAG application built with the Agno framework, featuring GPT-5 and LanceDB for efficient knowledge retrieval and question answering.
+## 🌟 Features
 
-## ✨ Features
-
-- **🤖 GPT-5**: Latest OpenAI model for intelligent responses
-- **🗄️ LanceDB**: Lightweight vector database for fast similarity search
-- **🔍 Agentic RAG**: Intelligent retrieval augmented generation
-- **📝 Markdown Formatting**: Beautiful, structured responses
-- **🌐 Dynamic Knowledge**: Add URLs to expand knowledge base
-- **⚡ Real-time Streaming**: Watch answers generate live
-- **🎯 Clean Interface**: Simplified UI without configuration complexity
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Python 3.11+
-- OpenAI API key with GPT-5 access
-
-### Installation
-
-1. **Clone and navigate to the project**
-   ```bash
-   cd rag_tutorials/agentic_rag_gpt5
-   ```
-
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Set up your OpenAI API key**
-   ```bash
-   export OPENAI_API_KEY="your-api-key-here"
-   ```
-   Or create a `.env` file:
-   ```
-   OPENAI_API_KEY=your-api-key-here
-   ```
-
-4. **Run the application**
-   ```bash
-   streamlit run agentic_rag_gpt5.py
-   ```
-
-## 🎯 How to Use
-
-1. **Enter your OpenAI API key** in the sidebar
-2. **Add knowledge sources** by entering URLs in the sidebar
-3. **Ask questions** using the text area or suggested prompts
-4. **Watch answers stream** in real-time with markdown formatting
-
-### Suggested Questions
-
-- **"What is Agno?"** - Learn about the Agno framework and agents
-- **"Teams in Agno"** - Understand how teams work in Agno
-- **"Build RAG system"** - Get a step-by-step guide to building RAG systems
+- **Agentic Knowledge Retrieval**: Autonomous decision-making on when and how to search the knowledge base.
+- **LanceDB Vector Core**: Lightweight, disk-persistent vector storage for high-speed similarity searches.
+- **Dynamic URL Ingestion**: Real-time crawling and indexing of web sources into the active knowledge base.
+- **High-Fidelity Synthesis**: Powered by GPT-4o (configured as GPT-5) for professional, markdown-rich responses.
+- **Premium Intelligence UI**: Sophisticated dark-themed interface with real-time streaming and status tracking.
 
 ## 🏗️ Architecture
 
-### Core Components
+```mermaid
+graph TD
+    User([User]) --> UI[Intelligence Lab UI]
+    UI --> Engine[RAG Engine]
+    Engine --> Agent[OpenAI Agentic AI]
+    Agent --> KB[Knowledge Base]
+    KB --> VectorStore[LanceDB]
+    KB --> Embedder[OpenAI Embedder]
+    Agent --> LLM[GPT-4o Reasoning]
+    UI --> Feedback[Final Answer + Stream]
+```
 
-- **`Agent`**: Orchestrates the entire Q&A process
-- **`UrlKnowledge`**: Manages document loading from URLs
-- **`LanceDb`**: Vector database for efficient similarity search
-- **`OpenAIEmbedder`**: Converts text to embeddings
-- **`OpenAIChat`**: GPT-5-nano model for generating responses
+## 🛠️ Quick Start
 
-### Data Flow
+1. **Clone & Install**:
 
-1. **Knowledge Loading**: URLs are processed and stored in LanceDB
-2. **Vector Search**: OpenAI embeddings enable semantic search
-3. **Response Generation**: GPT-5-nano processes information and generates answers
-4. **Streaming Output**: Real-time display of formatted responses
+   ```bash
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd rag_tutorials/agentic_rag_gpt5
+   pip install -r requirements.txt
+   ```
 
-## 🔧 Configuration
+2. **Configure OpenAI**:
+   Enter your OpenAI API key in the app sidebar.
 
-### Database Settings
-- **Vector DB**: LanceDB with local storage
-- **Table Name**: `agentic_rag_docs`
-- **Search Type**: Vector similarity search
+3. **Run the Lab**:
+   ```bash
+   streamlit run app.py
+   ```
 
-## 📚 Knowledge Management
+## 📦 Project Structure
 
-### Adding Sources
-- Use the sidebar to add new URLs
-- Sources are automatically processed and indexed
-- Current sources are displayed as numbered list
+- `app.py`: Main interactive research and orchestration dashboard.
+- `agents_config.py`: Configuration for the OpenAI agent and LanceDB knowledge base.
+- `rag_engine.py`: Core logic for dynamic ingestion and agentic streaming.
+- `utils.py`: UI styling and session management.
 
-### Default Knowledge
-- Starts with Agno documentation: `https://docs.agno.com/introduction/agents.md`
-- Expandable with any web-based documentation
+## 🚀 Professional Modernization
 
-## 🎨 UI Features
-
-### Sidebar
-- **API Key Management**: Secure input for OpenAI credentials
-- **URL Addition**: Dynamic knowledge base expansion
-- **Current Sources**: Numbered list of loaded URLs
-
-### Main Interface
-- **Suggested Prompts**: Quick access to common questions
-- **Query Input**: Large text area for custom questions
-- **Real-time Streaming**: Live answer generation
-- **Markdown Rendering**: Beautiful formatted responses
+This project has been transformed from a single-script tutorial into a robust strategic research hub. It focuses on the agility of agentic retrieval and the scalability of local vector storage to deliver high-fidelity intelligence at scale.

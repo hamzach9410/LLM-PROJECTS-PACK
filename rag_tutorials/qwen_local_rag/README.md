@@ -1,137 +1,62 @@
-# 🐋 Qwen 3 Local RAG Reasoning Agent
+# 🐋 Qwen 2.5 Strategic Intelligence Lab
 
-This RAG Application demonstrates how to build a powerful Retrieval-Augmented Generation (RAG) system using locally running Qwen 3 and Gemma 3 models via Ollama. It combines document processing, vector search, and web search capabilities to provide accurate, context-aware responses to user queries. Built with Agno v2.0.
+A high-performance local RAG platform designed for strategic intelligence analysis. Built with Qwen 2.5, Agno, and Qdrant, this platform seamlessly integrates local document research with real-time web search fallback for comprehensive analysis.
 
-## Features
+## 🌟 Features
 
-- **🧠 Multiple Local LLM Options**:
+- **Multi-Model Local Support**: Choose between Qwen 2.5, Gemma 3, and DeepSeek-R1 for localized reasoning.
+- **Hybrid Intelligence Flow**: Prioritizes local vector-stored documents; falls back to Exa Web Search for missing data.
+- **Qdrant Vector Cluster**: Industrial-grade local vector storage for high-fidelity document retrieval.
+- **Strategic Ingestion**: Real-time crawling of web sources and PDF indexing with metadata tracking.
+- **Premium Research UI**: Sophisticated dark-themed Streamlit interface for seamless intelligence orchestration.
 
-  - Qwen3 (1.7b, 8b) - Alibaba's latest language models
-  - Gemma3 (1b, 4b) - Google's efficient language models with multimodal capabilities
-  - DeepSeek (1.5b) - Alternative model option
-- **📚 Comprehensive RAG System**:
+## 🏗️ Architecture
 
-  - Upload and process PDF documents
-  - Extract content from web URLs
-  - Intelligent chunking and embedding
-  - Similarity search with adjustable threshold
-- **🌐 Web Search Integration**:
-
-  - Fallback to web search when document knowledge is insufficient
-  - Configurable domain filtering
-  - Source attribution in responses
-- **🔄 Flexible Operation Modes**:
-
-  - Toggle between RAG and direct LLM interaction
-  - Force web search when needed
-  - Adjust similarity thresholds for document retrieval
-- **💾 Vector Database Integration**:
-
-  - Qdrant vector database for efficient similarity search
-  - Persistent storage of document embeddings
-- **🔧 Agno v2.0 Framework**:
-
-  - Uses Agno v2.0 Knowledge embedder system
-  - Debug mode for enhanced development experience
-  - Modern agent architecture with improved tool integration
-
-## How to Get Started
-
-### Prerequisites
-
-- [Ollama](https://ollama.ai/) installed locally
-- Python 3.8+
-- Qdrant running locally (via Docker) for vector storage
-- Exa API key (optional, for web search capability)
-- Agno v2.0 installed
-
-### Installation
-
-1. Clone the GitHub repository
-
-```bash
-git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
-cd rag_tutorials/qwen_local_rag
+```mermaid
+graph TD
+    User([User]) --> UI[Intelligence Lab UI]
+    UI --> Engine[Strategic RAG Engine]
+    Engine --> VectorCheck[Local Qdrant Check]
+    VectorCheck -- Found --> Agent[Qwen Reasoning Agent]
+    VectorCheck -- Missing --> WebSearch[Exa Web Search Agent]
+    WebSearch --> Agent
+    Agent --> UI
+    UI --> Sources[Cited Local Fragments]
 ```
 
-2. Install the required dependencies:
+## 🛠️ Quick Start
 
-```bash
-pip install -r requirements.txt
-```
+1. **Infrastructure**:
+   Ensure [Ollama](https://ollama.com/) and [Qdrant](https://qdrant.tech/) are running locally.
 
-3. Pull the required models using Ollama:
+   ```bash
+   ollama pull qwen2.5:1.5b
+   ```
 
-```bash
-ollama pull qwen3:1.7b # Or any other model you want to use
-ollama pull snowflake-arctic-embed # For embeddings
-```
+2. **Clone & Install**:
 
-4. Run Qdrant locally through Docker:
+   ```bash
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd rag_tutorials/qwen_local_rag
+   pip install -r requirements.txt
+   ```
 
-```bash
-docker pull qdrant/qdrant
+3. **Configure Settings**:
+   Provide your Exa API key (optional) in the sidebar for web search capabilities.
 
-docker run -p 6333:6333 -p 6334:6334 \
-    -v "$(pwd)/qdrant_storage:/qdrant/storage:z" \
-    qdrant/qdrant
-```
+4. **Run the Lab**:
+   ```bash
+   streamlit run app.py
+   ```
 
-5. Get your API keys (optional):
+## 📦 Project Structure
 
-   - Exa API key (for web search fallback capability)
-   
-6. Run the application:
+- `app.py`: Main interactive research and orchestration dashboard.
+- `rag_engine.py`: Core logic for PDF/Web processing and priority retrieval.
+- `agents_config.py`: Configuration for Qwen and Web Search agents.
+- `vector_store.py`: Local Qdrant cluster management and custom Ollama embedders.
+- `utils.py`: UI research aesthetics and session management.
 
-```bash
-streamlit run qwen_local_rag_agent.py
-```
+## 🚀 Professional Modernization
 
-## How It Works
-
-1. **Document Processing**:
-
-   - PDF files are processed using PyPDFLoader
-   - Web content is extracted using WebBaseLoader
-   - Documents are split into chunks with RecursiveCharacterTextSplitter
-   - Metadata is added to track source types and timestamps
-
-2. **Vector Database**:
-
-   - Document chunks are embedded using Ollama's embedding models via Agno's OllamaEmbedder
-   - Embeddings are stored in Qdrant vector database
-   - Similarity search retrieves relevant documents based on query with configurable threshold
-
-3. **Query Processing**:
-
-   - User queries are analyzed to determine the best information source
-   - System checks document relevance using similarity threshold
-   - Falls back to web search if no relevant documents are found (when enabled)
-   - Supports forced web search mode via toggle
-
-4. **Response Generation**:
-
-   - Local LLM (Qwen/Gemma/DeepSeek) generates responses based on retrieved context
-   - Agno agents use debug mode for enhanced visibility into tool calls
-   - Sources are cited and displayed to the user
-   - Web search results are clearly indicated when used
-   - Reasoning process is displayed for reasoning models
-
-## Configuration Options
-
-- **Model Selection**: Choose between different Qwen, Gemma, and DeepSeek models
-- **RAG Mode**: Toggle between RAG-enabled and direct LLM interaction
-- **Search Tuning**: Adjust similarity threshold (0.0-1.0) for document retrieval
-- **Web Search**: Enable/disable web search fallback and configure domain filtering
-- **Debug Mode**: Agents use debug mode by default for better visibility into tool calls and execution flow
-
-## Use Cases
-
-- **Document Q&A**: Ask questions about your uploaded documents
-- **Research Assistant**: Combine document knowledge with web search
-- **Local Privacy**: Process sensitive documents without sending data to external APIs
-- **Offline Operation**: Run advanced AI capabilities with limited or no internet access
-
-## Requirements
-
-See `requirements.txt` for the complete list of dependencies.
+This project has been transformed from a single-script tutorial into a robust strategic intelligence hub. It focuses on the agility of local model execution and the power of hybrid search to deliver accurate analysis in high-stakes environments.

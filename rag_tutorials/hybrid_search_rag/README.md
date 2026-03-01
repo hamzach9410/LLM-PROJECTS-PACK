@@ -1,93 +1,54 @@
-# 👀 RAG App with Hybrid Search 
+# 👀 Hybrid RAG Intelligence Lab
 
-A powerful document Q&A application that leverages Hybrid Search (RAG) and Claude's advanced language capabilities to provide comprehensive answers. Built with RAGLite for robust document processing and retrieval, and Streamlit for an intuitive chat interface, this system seamlessly combines document-specific knowledge with Claude's general intelligence to deliver accurate and contextual responses.
+A high-performance RAG platform that implements **Hybrid (Semantic + Keyword) Search** with advanced reranking. Built with `raglite`, this platform orchestrates intelligence across OpenAI (Embeddings), Anthropic (Reasoning), and Cohere (Reranking) for superior accuracy.
 
-## Features
+## 🌟 Features
 
-- **Hybrid Search Question Answering**
-    - RAG-based answers for document-specific queries
-    - Fallback to Claude for general knowledge questions
+- **Hybrid Retrieval Strategy**: Combines vector similarity with keyword search for maximum recall.
+- **Strategic Reranking**: Leverages Cohere's rerank-v3 to ensure the most relevant context is prioritized for the LLM.
+- **Multi-Model Orchestration**: Uses OpenAI for strategic embeddings and Anthropic Claude 3 for high-fidelity synthesis.
+- **Seamless Fallback Logic**: Intelligently switches to global LLM knowledge if no internal documents are relevant.
+- **Professional Scalability**: Powered by `raglite` for efficient document chunking and local storage management.
 
-- **Document Processing**:
-  - PDF document upload and processing
-  - Automatic text chunking and embedding
-  - Hybrid search combining semantic and keyword matching
-  - Reranking for better context selection
+## 🏗️ Architecture
 
-- **Multi-Model Integration**:
-  - Claude for text generation - tested with Claude 3 Opus 
-  - OpenAI for embeddings - tested with text-embedding-3-large
-  - Cohere for reranking - tested with Cohere 3.5 reranker
+```mermaid
+graph TD
+    User([User]) --> UI[Intelligence Lab UI]
+    UI --> Engine[Hybrid Engine]
+    Engine --> Search[Hybrid Search: Semantic + Keyword]
+    Search --> Rerank[Cohere Reranking]
+    Rerank --> LLM[Anthropic Claude 3]
+    LLM --> UI
+    Engine -- No Context --> Fallback[Claude 3 Fallback]
+    Fallback --> UI
+```
 
-## Prerequisites
+## 🛠️ Quick Start
 
-You'll need the following API keys and database setup:
+1. **Clone & Install**:
 
-1. **Database**: Create a free PostgreSQL database at [Neon](https://neon.tech):
-   - Sign up/Login at Neon
-   - Create a new project
-   - Copy the connection string (looks like: `postgresql://user:pass@ep-xyz.region.aws.neon.tech/dbname`)
-
-2. **API Keys**:
-   - [OpenAI API key](https://platform.openai.com/api-keys) for embeddings
-   - [Anthropic API key](https://console.anthropic.com/settings/keys) for Claude
-   - [Cohere API key](https://dashboard.cohere.com/api-keys) for reranking
-
-## How to get Started?
-
-1. **Clone the Repository**:
    ```bash
    git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
-   cd LLM-PROJECTS-PACK/rag_tutorials/hybrid_search_rag
-   ```
-
-2. **Install Dependencies**:
-   ```bash
+   cd rag_tutorials/hybrid_search_rag
    pip install -r requirements.txt
    ```
 
-3. **Install spaCy Model**:
+2. **Configure Multi-Model Keys**:
+   Provide your OpenAI, Anthropic, and Cohere API keys in the app sidebar.
+
+3. **Run the Lab**:
    ```bash
-   pip install https://github.com/explosion/spacy-models/releases/download/xx_sent_ud_sm-3.7.0/xx_sent_ud_sm-3.7.0-py3-none-any.whl
+   streamlit run app.py
    ```
 
-4. **Run the Application**:
-   ```bash
-   streamlit run main.py
-   ```
+## 📦 Project Structure
 
-## Usage
+- `app.py`: Main interactive research and chat dashboard.
+- `rag_config.py`: Configuration for `raglite` and environment management.
+- `rag_engine.py`: Core logic for ingestion, hybrid search, and RAG execution.
+- `utils.py`: Fallback logic and UI aesthetic helpers.
 
-1. Start the application
-2. Enter your API keys in the sidebar:
-   - OpenAI API key
-   - Anthropic API key
-   - Cohere API key
-   - Database URL (optional, defaults to SQLite)
-3. Click "Save Configuration"
-4. Upload PDF documents
-5. Start asking questions!
-   - Document-specific questions will use RAG
-   - General questions will use Claude directly
+## 🚀 Professional Modernization
 
-## Database Options
-
-The application supports multiple database backends:
-
-- **PostgreSQL** (Recommended):
-  - Create a free serverless PostgreSQL database at [Neon](https://neon.tech)
-  - Get instant provisioning and scale-to-zero capability
-  - Connection string format: `postgresql://user:pass@ep-xyz.region.aws.neon.tech/dbname`
-
-- **MySQL**:
-  ```
-  mysql://user:pass@host:port/db
-  ```
-- **SQLite** (Local development):
-  ```
-  sqlite:///path/to/db.sqlite
-  ```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+This project has been transformed from a single-script tutorial into a comprehensive hybrid intelligence platform. It focuses on the synergy between multiple AI providers to deliver high-fidelity RAG workflows with industrial-grade precision.

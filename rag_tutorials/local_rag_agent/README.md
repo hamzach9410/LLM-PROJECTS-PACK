@@ -1,55 +1,58 @@
-## 🦙 Local RAG Agent with Llama 3.2
+# 🛡️ Local Privacy Intelligence Hub
 
-### 🎓 FREE Step-by-Step Tutorial 
-**👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-a-local-rag-agent) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
+A professional-grade local RAG platform designed for absolute data sovereignty. Built with Agno, Qdrant, and Ollama, this platform enables users to build personal knowledge bases and query them using agentic AI—entirely offline.
 
-This application implements a Retrieval-Augmented Generation (RAG) system using Llama 3.2 via Ollama, with Qdrant as the vector database. Built with Agno v2.0.
+## 🌟 Features
 
+- **Personal Data Sovereignty**: 100% local execution for embeddings, storage, and reasoning.
+- **Agentic Knowledge Retrieval**: Uses the Agno framework to intelligently search across indexed documentation.
+- **Qdrant Vector Cluster**: Industrial-grade local vector storage for high-speed similarity search.
+- **Local Embedding Pipeline**: Utilizes `OllamaEmbedder` for private document vectorization.
+- **Dynamic Source Ingestion**: Easily index PDF URLs or local files into your private vault.
 
-### Features
-- Fully local RAG implementation
-- Powered by Llama 3.2 through Ollama
-- Vector search using Qdrant
-- Interactive AgentOS interface
-- No external API dependencies
-- Uses Agno v2.0 Knowledge class for document management
+## 🏗️ Architecture
 
-### How to get Started?
-
-1. Clone the GitHub repository
-```bash
-git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+```mermaid
+graph TD
+    User([User]) --> UI[Privacy Hub UI]
+    UI --> Engine[Local Engine]
+    Engine --> Agent[Agno Agent]
+    Agent --> KB[Knowledge Base]
+    KB --> Qdrant[(Qdrant Local)]
+    KB --> Embedder[Ollama Embedder]
+    Agent --> LLM[Ollama Local model]
+    UI --> Feedback[Final Answer]
 ```
 
-2. Install the required dependencies:
+## 🛠️ Quick Start
 
-```bash
-cd LLM-PROJECTS-PACK/rag_tutorials/local_rag_agent
-pip install -r requirements.txt
-```
+1. **Local Infrastructure**:
+   Ensure [Ollama](https://ollama.com/) and [Qdrant](https://qdrant.tech/) (Docker or binary) are running.
 
-3. Install and start [Qdrant](https://qdrant.tech/) vector database locally
+   ```bash
+   ollama pull llama3.2
+   ```
 
-```bash
-docker pull qdrant/qdrant
-docker run -p 6333:6333 qdrant/qdrant
-```
+2. **Clone & Install**:
 
-4. Install [Ollama](https://ollama.com/download) and pull Llama 3.2 for LLM and OpenHermes as the embedder for OllamaEmbedder
-```bash
-ollama pull llama3.2
-ollama pull openhermes
-```
+   ```bash
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd rag_tutorials/local_rag_agent
+   pip install -r requirements.txt
+   ```
 
-5. Run the AI RAG Agent 
-```bash
-python local_rag_agent.py
-```
+3. **Run the Hub**:
+   ```bash
+   streamlit run app.py
+   ```
 
-6. Open your web browser and navigate to the URL provided in the console output (typically `http://localhost:7777`) to interact with the RAG agent through the AgentOS interface.
+## 📦 Project Structure
 
-### Note
-- The knowledge base loads a Thai Recipes PDF on the first run. You can comment out the `knowledge_base.add_content()` line after the first run to avoid reloading.
-- The AgentOS interface provides a web-based UI for interacting with your agent.
+- `app.py`: Main interactive research and orchestration dashboard.
+- `rag_engine.py`: Core logic for private document ingestion and agentic execution.
+- `agents_config.py`: Configuration for the Ollama agent and Qdrant vector storage.
+- `utils.py`: UI styling and session management.
 
+## 🚀 Professional Modernization
 
+This project has been transformed from a single-script tutorial into a robust privacy-focused research hub. It focuses on the total isolation of data, providing a high-performance RAG environment without the need for cloud-based providers.

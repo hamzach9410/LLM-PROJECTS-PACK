@@ -1,35 +1,58 @@
-## 💻 Local Lllama-3.1 with RAG
-Streamlit app that allows you to chat with any webpage using local Llama-3.1 and Retrieval Augmented Generation (RAG). This app runs entirely on your computer, making it 100% free and without the need for an internet connection.
+# 🌐 Local Web Intelligence Hub
 
+A privacy-first RAG platform built with Llama 3.1 and Ollama. This platform enables users to "harvest" knowledge from any web page and query it locally without data ever leaving their machine.
 
-### Features
-- Input a webpage URL
-- Ask questions about the content of the webpage
-- Get accurate answers using RAG and the Llama-3.1 model running locally on your computer
+## 🌟 Features
 
-### How to get Started?
+- **100% Local Intelligence**: Powered by Ollama for privacy-focused reasoning and embeddings.
+- **On-Demand Web Harvesting**: Real-time crawling and indexing of web URLs into a local Chroma vector store.
+- **LangChain Integration**: Built with robust modular chains for document loading, splitting, and retrieval.
+- **Customizable Core**: Easily switch between different Ollama models (Llama 3.1, Mistral, etc.) via the UI.
+- **Focused Research UI**: Clean Streamlit interface optimized for rapid web-source analysis.
 
-1. Clone the GitHub repository
+## 🏗️ Architecture
 
-```bash
-git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
-cd LLM-PROJECTS-PACK/rag_tutorials/llama3.1_local_rag
+```mermaid
+graph TD
+    User([User]) --> UI[Intelligence Hub UI]
+    UI --> Engine[Local Engine]
+    Engine --> Crawler[WebBaseLoader]
+    Crawler --> Splitter[Text Splitter]
+    Splitter --> VectorStore[Chroma DB]
+    VectorStore --> Embedder[Ollama Local Embedder]
+    Engine --> LLM[Ollama Local Llama 3.1]
+    UI --> Feedback[Final Answer]
 ```
-2. Install the required dependencies:
 
-```bash
-pip install -r requirements.txt
-```
-3. Run the Streamlit App
-```bash
-streamlit run llama3.1_local_rag.py
-```
+## 🛠️ Quick Start
 
-### How it Works?
+1. **Local LLM**:
+   Install [Ollama](https://ollama.com/) and pull Llama 3.1:
 
-- The app loads the webpage data using WebBaseLoader and splits it into chunks using RecursiveCharacterTextSplitter.
-- It creates Ollama embeddings and a vector store using Chroma.
-- The app sets up a RAG (Retrieval-Augmented Generation) chain, which retrieves relevant documents based on the user's question.
-- The Llama-3.1 model is called to generate an answer using the retrieved context.
-- The app displays the answer to the user's question.
+   ```bash
+   ollama pull llama3.1
+   ```
 
+2. **Clone & Install**:
+
+   ```bash
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd rag_tutorials/llama3.1_local_rag
+   pip install -r requirements.txt
+   ```
+
+3. **Run the Hub**:
+   ```bash
+   streamlit run app.py
+   ```
+
+## 📦 Project Structure
+
+- `app.py`: Main interactive research and harvesting dashboard.
+- `rag_engine.py`: Core logic for web crawling, vector management, and RAG execution.
+- `rag_config.py`: Configuration for local Ollama endpoints and model settings.
+- `utils.py`: UI styling and session helper utilities.
+
+## 🚀 Professional Modernization
+
+This project has been transformed from a single-script tutorial into a robust local research tool. It focuses on the convergence of privacy and performance, enabling secure analysis of public web content on private hardware.

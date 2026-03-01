@@ -1,171 +1,64 @@
-# 🔍 Knowledge Graph RAG with Verifiable Citations
+# 🔍 Knowledge Graph Intelligence Studio
 
-A Streamlit application demonstrating how **Knowledge Graph-based Retrieval-Augmented Generation (RAG)** provides multi-hop reasoning with fully verifiable source attribution.
+A sophisticated RAG platform that utilizes graph-based multi-hop reasoning and verifiable citations. Built with Agno, Neo4j, and Ollama, this platform enables transparent AI analysis by tracing every claim back to connected intelligence nodes.
 
-## 🎯 What Makes This Different?
+## 🌟 Features
 
-Traditional vector-based RAG finds similar text chunks, but struggles with:
-- Questions requiring information from multiple documents
-- Complex reasoning chains
-- Providing verifiable sources for each claim
-
-**Knowledge Graph RAG** solves these by:
-1. **Building a structured graph** of entities and relationships from documents
-2. **Traversing connections** to find related information (multi-hop reasoning)
-3. **Tracking provenance** so every claim links back to its source
-
-## ✨ Features
-
-| Feature | Description |
-|---------|-------------|
-| 🔗 **Multi-hop Reasoning** | Traverse entity relationships to answer complex questions |
-| 📚 **Verifiable Citations** | Every claim includes source document and text |
-| 🧠 **Reasoning Trace** | See exactly how the answer was derived |
-| 🏠 **Fully Local** | Uses Ollama for LLM, Neo4j for graph storage |
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-1. **Ollama** - Local LLM inference
-   ```bash
-   # Install from https://ollama.ai
-   ollama pull llama3.2
-   ```
-
-2. **Neo4j** - Knowledge graph database
-   ```bash
-   # Using Docker
-   docker run -d \
-     --name neo4j \
-     -p 7474:7474 -p 7687:7687 \
-     -e NEO4J_AUTH=neo4j/password \
-     neo4j:latest
-   ```
-
-### Installation
-
-```bash
-# Clone and navigate
-cd knowledge_graph_rag_citations
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the app
-streamlit run knowledge_graph_rag.py
-```
-
-## 📖 How It Works
-
-### Step 1: Document → Knowledge Graph
-
-```
-┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
-│   Document      │ ──► │  LLM Extraction  │ ──► │ Knowledge Graph │
-│   (Text/PDF)    │     │  (Entities+Rels) │     │    (Neo4j)      │
-└─────────────────┘     └──────────────────┘     └─────────────────┘
-```
-
-The LLM extracts:
-- **Entities**: People, organizations, concepts, technologies
-- **Relationships**: How entities connect (e.g., "works_for", "created", "uses")
-- **Provenance**: Source document and chunk for each extraction
-
-### Step 2: Query → Multi-hop Traversal
-
-```
-┌─────────┐     ┌─────────────┐     ┌─────────────┐     ┌───────────┐
-│  Query  │ ──► │  Find Start │ ──► │  Traverse   │ ──► │  Context  │
-│         │     │   Entities  │     │  Relations  │     │  + Sources│
-└─────────┘     └─────────────┘     └─────────────┘     └───────────┘
-```
-
-### Step 3: Answer → Verified Citations
-
-```
-┌─────────────┐     ┌─────────────┐     ┌──────────────────┐
-│   Context   │ ──► │  Generate   │ ──► │  Answer with     │
-│ + Sources   │     │   Answer    │     │  [1][2] Citations│
-└─────────────┘     └─────────────┘     └──────────────────┘
-                                                │
-                                                ▼
-                                        ┌──────────────────┐
-                                        │ Citation Details │
-                                        │ • Source Doc     │
-                                        │ • Source Text    │
-                                        │ • Reasoning Path │
-                                        └──────────────────┘
-```
-
-## 🖥️ Usage Example
-
-### 1. Add a Document
-
-Paste or select a sample document. The system extracts entities and relationships:
-
-```
-Document: "GraphRAG was developed by Microsoft Research. 
-           Darren Edge led the project..."
-
-Extracted:
-  ├── Entity: GraphRAG (TECHNOLOGY)
-  ├── Entity: Microsoft Research (ORGANIZATION)  
-  ├── Entity: Darren Edge (PERSON)
-  └── Relationship: Darren Edge --[WORKS_FOR]--> Microsoft Research
-```
-
-### 2. Ask a Question
-
-```
-Question: "Who developed GraphRAG and what organization are they from?"
-```
-
-### 3. Get Verified Answer
-
-```
-Answer: GraphRAG was developed by researchers at Microsoft Research [1], 
-        with Darren Edge leading the project [2].
-
-Citations:
-  [1] Source: AI Research Paper
-      Text: "GraphRAG is a technique developed by Microsoft Research..."
-      
-  [2] Source: AI Research Paper  
-      Text: "...introduced by researchers including Darren Edge..."
-```
-
-## 🔧 Configuration
-
-| Setting | Default | Description |
-|---------|---------|-------------|
-| Neo4j URI | `bolt://localhost:7687` | Neo4j connection string |
-| Neo4j User | `neo4j` | Database username |
-| Neo4j Password | - | Database password |
-| LLM Model | `llama3.2` | Ollama model for extraction/generation |
+- **Multi-Hop Reasoning**: Traverses complex relationships in Neo4j to answer questions that require connecting multiple documentation fragments.
+- **Verifiable Citations**: Every claim is explicitly tagged with source-level provenance [N].
+- **LLM-Based Entity Extraction**: Uses Llama 3.1 to autonomously identify entities and relationships from raw text.
+- **Transparent Reasoning Traces**: Real-time diagnostic logs of the graph traversal and lookup process.
+- **Strategic Visualization**: Insights into the density and connectivity of the research graph.
 
 ## 🏗️ Architecture
 
+```mermaid
+graph TD
+    User([User]) --> UI[Intelligence Studio UI]
+    UI --> Engine[Graph RAG Engine]
+    Engine --> Extractor[LLM Entity Extractor]
+    Extractor --> Neo4j[(Neo4j Graph)]
+    Engine --> Traversal[Multi-Hop Traversal]
+    Traversal --> Neo4j
+    Engine --> Reasoning[LLM Citation Generator]
+    Reasoning --> UI
+    UI --> Trace[Reasoning Trace]
+    UI --> Citations[Verified Source Links]
 ```
-knowledge_graph_rag_citations/
-├── knowledge_graph_rag.py   # Main Streamlit application
-├── requirements.txt         # Python dependencies
-└── README.md               # This file
-```
 
-### Key Components
+## 🛠️ Quick Start
 
-- **`KnowledgeGraphManager`**: Neo4j interface for graph operations
-- **`extract_entities_with_llm()`**: LLM-based entity/relationship extraction
-- **`generate_answer_with_citations()`**: Multi-hop RAG with provenance tracking
+1. **Infrastructure**:
+   Ensure [Neo4j](https://neo4j.com/) and [Ollama](https://ollama.com/) are running.
 
-## 🎓 Learn More
+   ```bash
+   ollama pull llama3.1
+   ```
 
-This example is inspired by [VeritasGraph](https://github.com/bibinprathap/VeritasGraph), an enterprise-grade framework for:
-- On-premise knowledge graph RAG
-- Visual reasoning traces (Veritas-Scope)
-- LoRA-tuned LLM integration
+2. **Clone & Install**:
 
-## 📝 License
+   ```bash
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd rag_tutorials/knowledge_graph_rag_citations
+   pip install -r requirements.txt
+   ```
 
-MIT License
+3. **Configure Credentials**:
+   Provide your Neo4j URI and credentials in the app sidebar.
+
+4. **Run the Studio**:
+   ```bash
+   streamlit run app.py
+   ```
+
+## 📦 Project Structure
+
+- `app.py`: Main interactive research and graph orchestration dashboard.
+- `rag_engine.py`: Core logic for entity extraction, traversal, and cited generation.
+- `graph_config.py`: Neo4j driver management and graph query logic.
+- `data_models.py`: Immutable schemas for entities, relationships, and citations.
+- `utils.py`: UI research aesthetics and session management.
+
+## 🚀 Professional Modernization
+
+This project has been transformed from a single-script tutorial into a robust graph intelligence hub. It focuses on the transparency of information retrieval and the power of connected-data reasoning for high-stakes research.

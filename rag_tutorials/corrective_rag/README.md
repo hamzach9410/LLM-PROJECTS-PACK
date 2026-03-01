@@ -1,58 +1,65 @@
-# 🔄 Corrective RAG Agent
-A sophisticated Retrieval-Augmented Generation (RAG) system that implements a corrective multi-stage workflow using LangGraph. This system combines document retrieval, relevance grading, query transformation, and web search to provide comprehensive and accurate responses.
+# 🔄 Corrective RAG Intelligence Studio
 
-## Features
+A high-fidelity RAG platform that implements **Corrective Retrieval-Augmented Generation (CRAG)** using LangGraph. This platform evaluates the quality of retrieved documents and autonomously triggers web searches (via Tavily) if the internal knowledge is insufficient.
 
-- **Smart Document Retrieval**: Uses Qdrant vector store for efficient document retrieval
-- **Document Relevance Grading**: Employs Claude 4.5 sonnet to assess document relevance
-- **Query Transformation**: Improves search results by optimizing queries when needed
-- **Web Search Fallback**: Uses Tavily API for web search when local documents aren't sufficient
-- **Multi-Model Approach**: Combines OpenAI embeddings and Claude 4.5 sonnet for different tasks
-- **Interactive UI**: Built with Streamlit for easy document upload and querying
+## 🌟 Features
 
-## How to Run?
+- **Self-Correcting Workflow**: Uses `LangGraph` to implement a multi-step pipeline (Retrieve -> Grade -> Transform -> Search -> Generate).
+- **Document Grading**: Intelligent relevance scoring of retrieved documents to filter out noise.
+- **Autonomous Web Fallback**: Triggers Tavily search if the vector store fails to provide relevant context.
+- **Multi-Cloud Intelligence**: Combines OpenAI embeddings with Anthropic Claude 3 for superior reasoning.
+- **Professional Scalability**: Powered by Qdrant vector database for high-performance similarity search.
 
-1. **Clone the Repository**:
+## 🏗️ Architecture
+
+```mermaid
+graph TD
+    User([User]) --> UI[Corrective Studio UI]
+    UI --> Graph[LangGraph Workflow]
+    Graph --> Retrieve[Qdrant Retrieval]
+    Retrieve --> Grade{Relevance Grade}
+    Grade -- Relevant --> Gen[Claude 3 Generation]
+    Grade -- Irrelevant --> Transform[Query Transformation]
+    Transform --> Search[Tavily Web Search]
+    Search --> Gen
+    Gen --> UI
+```
+
+## 🛠️ Quick Start
+
+1. **Infrastructure**:
+   Ensure [Qdrant](https://qdrant.tech/) is running (default: `localhost:6333`).
+
+2. **Clone & Install**:
+
    ```bash
    git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
    cd rag_tutorials/corrective_rag
-   ```
-
-2. **Install Dependencies**:
-   ```bash
    pip install -r requirements.txt
    ```
 
-3. **Set Up API Keys**:
-   You'll need to obtain the following API keys:
-   - [OpenAI API key](https://platform.openai.com/api-keys) (for embeddings)
-   - [Anthropic API key](https://console.anthropic.com/settings/keys) (for Claude 4.5 sonnet as LLM)
-   - [Tavily API key](https://app.tavily.com/home) (for web search)
-   - Qdrant Cloud Setup
-      1. Visit [Qdrant Cloud](https://cloud.qdrant.io/)
-      2. Create an account or sign in
-      3. Create a new cluster
-      4. Get your credentials:
-         - Qdrant API Key: Found in API Keys section
-         - Qdrant URL: Your cluster URL (format: `https://xxx-xxx.aws.cloud.qdrant.io`)
+3. **Configure API Keys**:
+   Create a `.env` file or use the sidebar:
 
-4. **Run the Application**:
-   ```bash
-   streamlit run corrective_rag.py
+   ```env
+   OPENAI_API_KEY=your_openai_key
+   ANTHROPIC_API_KEY=your_anthropic_key
+   TAVILY_API_KEY=your_tavily_key
    ```
 
-5. **Use the Application**:
-   - Upload documents or provide URLs
-   - Enter your questions in the query box
-   - View the step-by-step Corrective RAG process
-   - Get comprehensive answers
+4. **Run the Studio**:
+   ```bash
+   streamlit run app.py
+   ```
 
-## Tech Stack
+## 📦 Project Structure
 
-- **LangChain**: For RAG orchestration and chains
-- **LangGraph**: For workflow management
-- **Qdrant**: Vector database for document storage
-- **Claude 4.5 sonnet**: Main language model for analysis and generation
-- **OpenAI**: For document embeddings
-- **Tavily**: For web search capabilities
-- **Streamlit**: For the user interface
+- `app.py`: Main interactive graph orchestration dashboard.
+- `graph_config.py`: LangGraph workflow definition and node logic.
+- `llm_config.py`: Configuration for OpenAI and Anthropic models.
+- `vector_store.py`: Qdrant client and collection management.
+- `rag_logic.py`: Document loading and external search utilities.
+
+## 🚀 Professional Modernization
+
+This project has been transformed from a single-script tutorial into a robust autonomous research platform. It leverages state-of-the-art graph orchestration for self-correcting intelligence and high-fidelity RAG workflows.
