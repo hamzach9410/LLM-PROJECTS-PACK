@@ -36,7 +36,7 @@ graph TD
 
    ```bash
    git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
-   cd starter_ai_agents/ai_life_insurance_advisor_agent
+   cd starter_ai_advisor_agent
    pip install -r requirements.txt
    ```
 
@@ -61,9 +61,9 @@ graph TD
 - `advisor_engine.py`: Orchestration logic for sandboxed math and market research.
 - `utils.py`: Shared logging, currency formatting, and JSON helpers.
 
-## 🚀 20 Contributions
+## 🚀 Professional Modernization
 
-This project has been transformed from a single experimental script into a production-grade financial studio with 20 contributions focused on math precision, research efficiency, and modular scalability.
+This project has been transformed from a single experimental script into a production-grade financial studio with a focus on math precision, research efficiency, and modular scalability.
 
 ---
 
