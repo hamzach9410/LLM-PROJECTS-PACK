@@ -1,52 +1,54 @@
-## 📰 ➡️ 🎙️ Blog to Podcast Agent
-This is a Streamlit-based application that allows users to convert any blog post into a podcast. The app uses OpenAI's GPT-4 model for summarization, Firecrawl for scraping blog content, and ElevenLabs API for generating audio. Users simply input a blog URL, and the app will generate a podcast episode based on the blog.
+# 🎙️ AI Blog-to-Podcast Engine
 
-## Features
+A professional-grade AI platform that transforms static blog posts into engaging, natural-sounding podcast scripts. Built with Agno and Google Gemini Vision, this platform handles web scraping, deep content analysis, and creative scriptwriting in a unified pipeline.
 
-- **Blog Scraping**: Scrapes the full content of any public blog URL using Firecrawl API.
+## 🌟 Features
 
-- **Summary Generation**: Creates an engaging and concise summary of the blog (within 2000 characters) using OpenAI GPT-4.
+- **Automated Web Scraping**: Efficiently extracts text content from any public blog URL.
+- **Hierarchical Content Analysis**: Specialized agents identify core themes and supporting arguments before writing.
+- **Conversational Scriptwriting**: Generates dynamic interaction between hosts or hosts and guests.
+- **Modular Architecture**: Clean separation between scraper logic, agent personas, and the UI.
+- **Professional Exports**: Download finalized scripts in Markdown format for immediate production.
 
-- **Podcast Generation**: Converts the summary into an audio podcast using the ElevenLabs voice API.
+## 🏗️ Architecture
 
-- **API Key Integration**: Requires OpenAI, Firecrawl, and ElevenLabs API keys to function, entered securely via the sidebar.
+```mermaid
+graph TD
+    User([User]) --> UI[Podcast Engine UI]
+    UI --> Scraper[Content Engine]
+    Scraper --> |Raw Text| Analyst[Content Analyst]
+    Analyst --> |Insights| Scriptwriter[Podcast Scriptwriter]
+    Scriptwriter --> |Final Script| UI
+```
 
-## Setup
+## 🛠️ Quick Start
 
-### Requirements 
+1. **Clone & Install**:
 
-1. **API Keys**:
-    - **OpenAI API Key**: Sign up at OpenAI to obtain your API key.
-
-    - **ElevenLabs API Key**: Get your ElevenLabs API key from ElevenLabs.
-
-    - **Firecrawl API Key**: Get your Firecrawl API key from Firecrawl.
-
-2. **Python 3.8+**: Ensure you have Python 3.8 or higher installed.
-
-### Installation
-1. Clone this repository:
    ```bash
-   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
    cd starter_ai_agents/ai_blog_to_podcast_agent
-   ```
-
-2. Install the required Python packages:
-   ```bash
    pip install -r requirements.txt
    ```
-### Running the App
 
-1. Start the Streamlit app:
-   ```bash
-   streamlit run blog_to_podcast_agent.py
+2. **Configure API Key**:
+   Create a `.env` file or use the sidebar:
+
+   ```env
+   GOOGLE_API_KEY=your_gemini_key
    ```
 
-2. In the app interface:
-    - Enter your OpenAI, ElevenLabs, and Firecrawl API keys in the sidebar.
+3. **Run the Engine**:
+   ```bash
+   streamlit run app.py
+   ```
 
-    - Input the blog URL you want to convert.
+## 📦 Project Structure
 
-    - Click "🎙️ Generate Podcast".
+- `app.py`: Main interactive dashboard.
+- `agents_config.py`: Persona definitions for content analysts and scriptwriters.
+- `podcast_engine.py`: Scraper and orchestration logic.
 
-    - Listen to the generated podcast or download it.
+## 🚀 Professional Modernization
+
+This project has been transformed from a single-script tutorial into a comprehensive content transformation platform with a focus on modularity and high-quality audio script generation.

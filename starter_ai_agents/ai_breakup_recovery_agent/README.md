@@ -1,94 +1,62 @@
-# 💔 Breakup Recovery Agent Team
+# ❤️ AI Relationship Wellness Platform
 
-### 🎓 FREE Step-by-Step Tutorial 
-**👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-an-ai-breakup-recovery-agent-team-f29b) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
+A professional-grade AI support platform designed for emotional recovery and personal growth after a breakup. Built with Agno and Google Gemini Vision, this platform provides a dual-agent approach combining deep empathy with practical wellness strategies.
 
-This is an AI-powered application designed to help users emotionally recover from breakups by providing support, guidance, and emotional outlet messages from a team of specialized AI agents. The app is built using **Streamlit** and **Agno**, leveraging **Gemini 2.0 Flash (Google Vision Model)   **.
+## 🌟 Features
 
-## 🚀 Features
+- **Dual-Agent Architecture**:
+  - **Empathetic Counselor**: Provides validating, non-judgmental support and emotional perspective.
+  - **Wellness Strategist**: Offers actionable self-care routines and personal growth goals.
+- **Private & Safe Space**: Interactive interface designed for individual reflection and support.
+- **Actionable Wellness Plans**: Transforms emotional insights into concrete steps for moving forward.
+- **Session Summaries**: One-click download of your counseling insights and action plans in Markdown.
+- **Modern Modular Design**: Clean separation between agent personas, processing engines, and the UI.
 
-- 🧠 **Multi-Agent Team:** 
-    - **Therapist Agent:** Offers empathetic support and coping strategies.
-    - **Closure Agent:** Writes emotional messages users shouldn't send for catharsis.
-    - **Routine Planner Agent:** Suggests daily routines for emotional recovery.
-    - **Brutal Honesty Agent:** Provides direct, no-nonsense feedback on the breakup.
-- 📷 **Chat Screenshot Analysis:**
-    - Upload screenshots for chat analysis.
-- 🔑 **API Key Management:**
-    - Store and manage your Gemini API keys securely via Streamlit's sidebar.
-- ⚡ **Parallel Execution:** 
-    - Agents process inputs in coordination mode for comprehensive results.
-- ✅ **User-Friendly Interface:** 
-    - Simple, intuitive UI with easy interaction and display of agent responses.
+## 🏗️ Architecture
 
----
+```mermaid
+graph TD
+    User([User]) --> UI[Wellness Hub UI]
+    UI --> Engine[Recovery Engine]
+    Engine --> Counselor[Empathetic Counselor]
+    Engine --> Strategist[Wellness Strategist]
+    Counselor --> |Validation| UI
+    Strategist --> |Action Plan| UI
+```
 
-## 🛠️ Tech Stack
+## 🛠️ Quick Start
 
-- **Frontend:** Streamlit (Python)
-- **AI Models:** Gemini 2.0 Flash (Google Vision Model)
-- **Image Processing:** PIL (for displaying screenshots)
-- **Text Extraction:** Google's Gemini Vision model to analyze chat screenshots
-- **Environment Variables:** API keys managed with `st.session_state` in Streamlit
+1. **Clone & Install**:
 
----
-
-## 📦 Installation
-
-1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
    cd starter_ai_agents/ai_breakup_recovery_agent
-   ```
-
-2. **Install Dependencies:**
-   ```bash
    pip install -r requirements.txt
    ```
 
-4. **Run the Streamlit App:**
-   ```bash
-   streamlit run ai_breakup_recovery_agent.py
+2. **Configure API Key**:
+   Create a `.env` file or use the sidebar:
+
+   ```env
+   GOOGLE_API_KEY=your_gemini_key
    ```
 
----
+3. **Run the Platform**:
+   ```bash
+   streamlit run app.py
+   ```
 
-## 🔑 Environment Variables
+## 📦 Project Structure
 
-Make sure to provide your **Gemini API key** in the Streamlit sidebar:
+- `app.py`: Main interactive support dashboard.
+- `agents_config.py`: Persona definitions for the Counselor and Strategist.
+- `recovery_engine.py`: Orchestration logic for the dual-agent support pipeline.
 
-- GEMINI_API_KEY=your_google_gemini_api_key
+## 🚀 Professional Modernization
 
----
-
-## 🛠️ Usage
-
-1. **Enter Your Feelings:** 
-    - Describe how you're feeling in the text area.
-2. **Upload Screenshot (Optional):**
-    - Upload a chat screenshot (PNG, JPG, JPEG) for analysis.
-3. **Execute Agents:**
-    - Click **"Get Recovery Support"** to run the multi-agent team.
-4. **View Results:**
-    - Individual agent responses are displayed.
-    - A final summary is provided by the Team Leader.
+This project has been transformed from a single-script tutorial into a comprehensive emotional support platform with a focus on modularity, security, and high-fidelity wellness guidance.
 
 ---
 
-## 🧑‍💻 Agents Overview
-
-- **Therapist Agent**
-    - Provides empathetic support and coping strategies.
-    - Uses **Gemini 2.0 Flash (Google Vision Model)** and DuckDuckGo tools for insights.
-  
-- **Closure Agent**
-    - Generates unsent emotional messages for emotional release.
-    - Ensures heartfelt and authentic messages.
-
-- **Routine Planner Agent**
-    - Creates a daily recovery routine with balanced activities.
-    - Includes self-reflection, social interaction, and healthy distractions.
-
-- **Brutal Honesty Agent**
-    - Offers direct, objective feedback on the breakup.
-    - Uses factual language with no sugar-coating.
+> [!CAUTION]
+> This tool is for informational and educational purposes only. It is NOT a substitute for professional mental health services. If you are in crisis, please contact professional emergency services immediately.

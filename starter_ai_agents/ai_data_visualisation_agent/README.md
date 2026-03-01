@@ -1,45 +1,56 @@
-# 📊 AI Data Visualization Agent
+# 🎨 Visual Data Intelligence Hub
 
-### 🎓 FREE Step-by-Step Tutorial 
-**👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-an-ai-data-visualization-agent) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
+A professional-grade AI platform for architectural data visualization and storytelling. Built with Agno and Google Gemini Vision, this platform transforms raw datasets into optimized visualization blueprints and compelling data narratives using specialized design agents.
 
-A Streamlit application that acts as your personal data visualization expert, powered by LLMs. Simply upload your dataset and ask questions in natural language - the AI agent will analyze your data, generate appropriate visualizations, and provide insights through a combination of charts, statistics, and explanations.
+## 🌟 Features
 
-## Features
-#### Natural Language Data Analysis
-- Ask questions about your data in plain English
-- Get instant visualizations and statistical analysis
-- Receive explanations of findings and insights
-- Interactive follow-up questioning
+- **Architectural Chart Blueprinting**: Specialized agent identifies the most effective visualization types for any given data structure.
+- **Narrative Storyboarding**: A dedicated design agent crafts engaging captions, titles, and summaries to create a cohesive data story.
+- **Multi-Modal Ingestion**: Supports CSV file uploading and trend descriptions for visual planning.
+- **Expert Design Snippets**: Provides structured recommendations and Python-ready visualization concepts.
+- **Professional Exports**: One-click download of visualization blueprints and narratives in Markdown format.
 
-#### Intelligent Visualization Selection
-- Automatic choice of appropriate chart types
-- Dynamic visualization generation
-- Statistical visualization support
-- Custom plot formatting and styling
+## 🏗️ Architecture
 
-#### Multi-Model AI Support
-- Meta-Llama 3.1 405B for complex analysis
-- DeepSeek V3 for detailed insights
-- Qwen 2.5 7B for quick analysis
-- Meta-Llama 3.3 70B for advanced queries
+```mermaid
+graph TD
+    User([User]) --> UI[Visual Hub UI]
+    UI --> Engine[Visualisation Engine]
+    Engine --> Specialist[Viz Architect Agent]
+    Engine --> Designer[Narrative Designer Agent]
+    Specialist --> |Chart Blueprints| UI
+    Designer --> |Data Story| UI
+    UI --> Export[MD Downloader]
+```
 
-## How to Run
+## 🛠️ Quick Start
 
-Follow the steps below to set up and run the application:
-- Before anything else, Please get a free Together AI API Key here: https://api.together.ai/signin
-- Get a free E2B API Key here: https://e2b.dev/ ; https://e2b.dev/docs/legacy/getting-started/api-key
+1. **Clone & Install**:
 
-1. **Clone the Repository**
    ```bash
    git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
    cd starter_ai_agents/ai_data_visualisation_agent
+   pip install -r requirements.txt
    ```
-2. **Install the dependencies**
-    ```bash
-    pip install -r requirements.txt
-    ```
-3. **Run the Streamlit app**
-    ```bash
-    streamlit run ai_data_visualisation_agent.py
-    ```
+
+2. **Configure API Key**:
+   Create a `.env` file or use the sidebar:
+
+   ```env
+   GOOGLE_API_KEY=your_gemini_key
+   ```
+
+3. **Run the Hub**:
+   ```bash
+   streamlit run app.py
+   ```
+
+## 📦 Project Structure
+
+- `app.py`: Main interactive visualization dashboard.
+- `agents_config.py`: Persona definitions for the Viz Architect and Narrative Designer.
+- `visualisation_engine.py`: Orchestration logic for data previewing and design planning.
+
+## 🚀 Professional Modernization
+
+This project has been transformed from a single-script tutorial into a comprehensive visual intelligence platform with a focus on modularity, aesthetic impact, and high-fidelity data storytelling.

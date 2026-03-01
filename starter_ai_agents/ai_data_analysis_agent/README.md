@@ -1,58 +1,56 @@
-# 📊 AI Data Analysis Agent
+# 🔬 Autonomous Data Intelligence Lab
 
-### 🎓 FREE Step-by-Step Tutorial 
-**👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-an-ai-data-analysis-agent) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
+A professional-grade AI platform for deep data analysis and contextual research. Built with Agno and Google Gemini Vision, this platform autonomously extracts patterns from datasets and enriches them with real-time global context using specialized research agents.
 
-An AI data analysis Agent built using the Agno Agent framework and Openai's gpt-4o model. This agent helps users analyze their data - csv, excel files through natural language queries, powered by OpenAI's language models and DuckDB for efficient data processing - making data analysis accessible to users regardless of their SQL expertise.
+## 🌟 Features
 
-## Features
+- **Autonomous Data Extraction**: Specialized analyst agent identifies trends, anomalies, and statistical correlations.
+- **Real-Time Research Integration**: Integrates DuckDuckGo to provide external context and literature support for findings.
+- **Multi-Modal Data Ingestion**: Supports CSV file uploading and raw text context analysis.
+- **Structured Reporting**: Generates bifurcated reports covering Internal Analysis and Global Research Context.
+- **Professional Exports**: One-click download of comprehensive intelligence reports in Markdown format.
 
-- 📤 **File Upload Support**: 
-  - Upload CSV and Excel files
-  - Automatic data type detection and schema inference
-  - Support for multiple file formats
+## 🏗️ Architecture
 
-- 💬 **Natural Language Queries**: 
-  - Convert natural language questions into SQL queries
-  - Get instant answers about your data
-  - No SQL knowledge required
+```mermaid
+graph TD
+    User([User]) --> UI[Data Intel Hub]
+    UI --> Engine[Analysis Engine]
+    Engine --> Analyst[Data Analyst Agent]
+    Engine --> Integrator[Research Integrator Agent]
+    Analyst --> |Patterns| Integrator
+    Integrator --> |Global Context| UI
+    UI --> Export[MD Downloader]
+```
 
-- 🔍 **Advanced Analysis**:
-  - Perform complex data aggregations
-  - Filter and sort data
-  - Generate statistical summaries
-  - Create data visualizations
+## 🛠️ Quick Start
 
-- 🎯 **Interactive UI**:
-  - User-friendly Streamlit interface
-  - Real-time query processing
-  - Clear result presentation
+1. **Clone & Install**:
 
-## How to Run
-
-1. **Setup Environment**
    ```bash
-   # Clone the repository
    git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
-   cd LLM-PROJECTS-PACK/starter_ai_agents/ai_data_analysis_agent
-
-   # Install dependencies
+   cd starter_ai_agents/ai_data_analysis_agent
    pip install -r requirements.txt
    ```
 
-2. **Configure API Keys**
-   - Get OpenAI API key from [OpenAI Platform](https://platform.openai.com)
+2. **Configure API Key**:
+   Create a `.env` file or use the sidebar:
 
-3. **Run the Application**
-   ```bash
-   streamlit run ai_data_analyst.py
+   ```env
+   GOOGLE_API_KEY=your_gemini_key
    ```
 
-## Usage
+3. **Run the Lab**:
+   ```bash
+   streamlit run app.py
+   ```
 
-1. Launch the application using the command above
-2. Provide your OpenAI API key in the sidebar of Streamlit
-3. Upload your CSV or Excel file through the Streamlit interface
-4. Ask questions about your data in natural language
-5. View the results and generated visualizations
+## 📦 Project Structure
 
+- `app.py`: Main interactive diagnostic dashboard.
+- `agents_config.py`: Persona definitions for the Data Analyst and Research Integrator.
+- `analysis_engine.py`: Orchestration logic for data processing and research enrichment.
+
+## 🚀 Professional Modernization
+
+This project has been transformed from a single-script tutorial into a comprehensive data intelligence platform with a focus on modularity, scalability, and high-fidelity research integration.
