@@ -26,8 +26,8 @@ Follow these steps to set up and run the application:
 
 1.  **Clone and Navigate to Directory** :
     ```bash
-    git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-    cd awesome-llm-apps/rag_tutorials/vision_rag
+    git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+    cd LLM-PROJECTS-PACK/rag_tutorials/vision_rag
     ```
 
 2.  **Install Dependencies**:

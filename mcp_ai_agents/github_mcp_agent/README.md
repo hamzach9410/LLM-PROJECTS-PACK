@@ -30,7 +30,7 @@ A Streamlit application that allows you to explore and analyze GitHub repositori
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
    cd mcp-github-agent
    ```
 

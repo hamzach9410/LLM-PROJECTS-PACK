@@ -18,13 +18,13 @@ This application implements a Retrieval-Augmented Generation (RAG) system using 
 
 1. Clone the GitHub repository
 ```bash
-git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
+git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
 ```
 
 2. Install the required dependencies:
 
 ```bash
-cd awesome-llm-apps/rag_tutorials/local_rag_agent
+cd LLM-PROJECTS-PACK/rag_tutorials/local_rag_agent
 pip install -r requirements.txt
 ```
 

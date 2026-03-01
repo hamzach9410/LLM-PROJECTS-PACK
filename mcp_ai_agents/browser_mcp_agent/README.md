@@ -27,7 +27,7 @@ A Streamlit application that allows you to browse and interact with websites usi
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
    cd mcp_ai_agents/browser_mcp_agent
    ```
 

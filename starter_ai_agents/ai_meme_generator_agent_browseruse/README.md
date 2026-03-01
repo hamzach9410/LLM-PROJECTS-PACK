@@ -1,56 +1,61 @@
-# 🥸 AI Meme Generator Agent - Browser Use
+# 🥸 AI Meme Hub (Browser Use)
 
-The AI Meme Generator Agent is a powerful browser automation tool that creates memes using AI agents. This app combines multi-LLM capabilities with automated browser interactions to generate memes based on text prompts through direct website manipulation.
+A professional AI agent platform for generating hilarious memes through browser automation. Powered by `browser-use`, this hub orchestrates autonomous navigation of ImgFlip, template matching, and captioning.
 
-## Features
+## 🌟 Features
 
-- **Multi-LLM Support**
-  - Claude 3.5 Sonnet (Anthropic)
-  - GPT-4o (OpenAI)
-  - Deepseek v3 (Deepseek)
-  - Automatic model switching with API key validation
+- **Autonomous Browser Agent**: Leverages `browser-use` to navigate ImgFlip, search for templates, and click buttons.
+- **Multi-Model Intelligence**: Support for CLAUDE-3.5-SONNET, DEEPSEEK-CHAT, and GPT-4o.
+- **Meme Gallery**: Real-time session history to browse and revisit your masterpieces.
+- **Visual Progress Tracking**: Transparent view into the agent's browser automation steps.
+- **High-End UI/UX**: Modern Streamlit interface with a "Meme Hub" aesthetic and responsive sidebar.
+- **Modular Architecture**: Clean separation between LLM configuration, browser logic, and the UI layer.
 
-- **Browser Automation**:
-  - Direct interaction with imgflip.com meme templates
-  - Automated search for relevant meme formats
-  - Dynamic text insertion for top/bottom captions
-  - Image link extraction from generated memes
+## 🏗️ Architecture
 
-- **Smart Generation Workflow**:
-  - Action verb extraction from prompts
-  - Metaphorical template matching
-  - Multi-step quality validation
-  - Automatic retry mechanism for failed generations
+```mermaid
+graph TD
+    User([User]) --> UI[Streamlit Meme Hub]
+    UI --> BE[Browser Engine]
+    BE --> BUse[Browser-Use Agent]
+    BUse --> Browser[(Playwright Browser)]
+    Browser --> ImgFlip[ImgFlip.com]
+    ImgFlip --> MemeResult[Generated Meme URL]
+    MemeResult --> BE
+    BE --> UI
+    UI --> Gallery[Session Gallery]
+```
 
-- **User-Friendly Interface**:
-  - Model configuration sidebar
-  - API key management
-  - Direct meme preview with clickable links
-  - Responsive error handling
+## 🛠️ Quick Start
 
+1. **Install Dependencies**:
 
-API keys required:
-- **Anthropic** (for Claude)
-- **Deepseek** 
-- **OpenAI** (for GPT-4o)
-
-## How to Run
-
-1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-   cd ai_agent_tutorials/ai_meme_generator_browseruse
+   pip install -r requirements.txt
+   playwright install
    ```
-2. **Install the dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-    Install `playwright` if needed.
-    ```bash
-    python -m playwright install --with-deps
-    ```
-3. **Run the Streamlit app**:
-    ```bash
-    streamlit run ai_meme_generator_agent.py
 
-    ```
+2. **Configure Environment**:
+   Create a `.env` file or use the sidebar:
+
+   ```env
+   OPENAI_API_KEY=...
+   ANTHROPIC_API_KEY=...
+   DEEPSEEK_API_KEY=...
+   ```
+
+3. **Launch the Hub**:
+   ```bash
+   streamlit run app.py
+   ```
+
+## 📦 Project Structure
+
+- `app.py`: Main interactive dashboard and gallery.
+- `browser_engine.py`: Orchestration logic for browser-use agents.
+- `agents_config.py`: LLM factory and task prompt management.
+- `utils.py`: Logging and URL extraction helpers.
+
+## 🚀 20 Contributions
+
+This project has been transformed from a single experimental script into a production-grade meme studio with 20 contributions focused on modularity, UI persistence, and resilient automation.

@@ -62,8 +62,8 @@ These models offer a good balance of performance and resource usage, and have be
 
 3. **Install Dependencies**:
    ```bash
-   git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-   cd awesome-llm-apps/rag_tutorials/local_hybrid_search_rag
+   git clone https://github.com/hamzach9410/LLM-PROJECTS-PACK.git
+   cd LLM-PROJECTS-PACK/rag_tutorials/local_hybrid_search_rag
    pip install -r requirements.txt
    ```
 
